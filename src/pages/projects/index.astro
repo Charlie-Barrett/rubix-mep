@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/pages.css';
+
+const projects = [
+  {
+    href: '/projects/national-trust-carbon-impact-studies',
+    img: '/assets/national-trust-photo.jpg',
+    capsules: ['National Trust', 'Heritage &middot; Sustainability'],
+    alt: 'National Trust carbon impact studies'
+  },
+  {
+    href: '/projects/knowle-retirement-village',
+    img: '/assets/knowle.jpg',
+    capsules: ['Opus, Knowle', '&pound;34m &middot; Later Living'],
+    alt: 'Knowle Retirement Village'
+  },
+  {
+    href: '/projects/the-lampworks',
+    img: '/assets/lampworks-cgi.png',
+    capsules: ['The Lampworks', '&pound;23m &middot; Residential'],
+    alt: 'The Lampworks build-to-rent development'
+  },
+  {
+    href: '/projects/shepperton-studios',
+    img: '/assets/shepperton-external.jpg',
+    capsules: ['Shepperton Studios', 'Studios &amp; Media'],
+    alt: 'Shepperton Studios F&B fit-out'
+  },
+  {
+    href: '/projects/batsford-arboretum',
+    img: '/assets/client-batsford.png',
+    logoCard: true,
+    capsules: ['Batsford Arboretum', '&pound;2m &middot; Heritage'],
+    alt: 'Batsford Arboretum visitor building extension'
+  }
+];
+---
+<BaseLayout
+  title="Projects | MEP Case Studies | Rubix MEP"
+  description="MEP design case studies from Rubix MEP: build-to-rent, later living, film studios, heritage estates and site-wide carbon impact studies across the UK."
+  ctaSub="Tell us what you're building and we'll tell you how we'd engineer it."
+>
+  <section class="page-hero">
+    <div class="bg" role="img" aria-label="City skyline blended with forest treeline in Rubix navy duotone"></div>
+    <div class="wrap">
+      <div class="eyebrow rv"><span class="dot"></span>Proof, not promises</div>
+      <h1 class="disp rv rv-d1">Our projects</h1>
+      <p class="lede rv rv-d2">From build-to-rent and later living to film studios and heritage estates: five case studies in how we design low-<span class="c-green">carbon</span> building services that get built.</p>
+    </div>
+  </section>
+
+  <section class="sec-pad soft">
+    <div class="wrap">
+      <div class="shead2 rv">
+        <div class="ndash"></div>
+        <h2>Case <b>studies</b></h2>
+        <p>Every project below is real, delivered work, with the client, value and scope stated. More case studies will be added as the site grows.</p>
+      </div>
+      <div class="pgrid">
+        {projects.map((p, i) => (
+          <a class={'pcard rv' + (p.logoCard ? ' logo-card' : '') + (i % 2 === 1 ? ' rv-d1' : '')} href={p.href} aria-label={p.alt}>
+            <div class="fill" style={`background-image:url('${p.img}')`}></div>
+            <div class="shade"></div>
+            <div class="capsules">
+              {p.capsules.map((c, j) => <span class={j === 0 ? 'capsule' : 'capsule alt'} set:html={c} />)}
+            </div>
+            <span class="more">View project <span class="arr">&rarr;</span></span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

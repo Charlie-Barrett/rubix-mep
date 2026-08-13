@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/services.css';
+---
+<BaseLayout
+  title="MEP Design Services | Rubix MEP"
+  description="End-to-end MEP design services: mechanical, electrical, public health and sustainability engineering, RIBA 0-7. Carbon impact quantified. Discuss your project."
+  ctaSub="Tell us what you're building and we'll tell you how we'd engineer it."
+>
+  <!-- SERVICES HERO: magenta duotone -->
+  <section class="svc-hero">
+    <div class="bg" role="img" aria-label="City skyline blended with forest treeline, magenta overlay"></div>
+    <div class="wrap">
+      <div class="eyebrow rv"><span class="dot"></span>Our services &middot; RIBA Stages 0&ndash;7</div>
+      <h1 class="disp rv rv-d1">Our MEP design services</h1>
+      <p class="lede rv rv-d2">End-to-end MEP design services: mechanical, electrical, public health and sustainability engineering, coordinated under one roof from concept to completion and beyond.</p>
+    </div>
+  </section>
+
+  <!-- RANGE OF SERVICES -->
+  <section class="range">
+    <div class="wrap">
+      <div class="rhead rv">
+        <div class="ndash"></div>
+        <h2>Our range of <b>MEP consultancy</b> services</h2>
+      </div>
+
+      <div class="susblock rv" id="sustainability">
+        <div class="shead">
+          <img src="/assets/icon-sustainability.png" alt="" />
+          <h3>Low <span class="c-green">Carbon</span> Energy / Sustainability</h3>
+        </div>
+        <div class="scols">
+          <p class="sintro">Working with our clients to realise their net-zero <span class="c-green">carbon</span> aspirations through construction and operation, across refurbishment and new-build developments.</p>
+          <ul>
+            <li>Environmental, Social &amp; Governance (ESG) strategies</li>
+            <li>Passive design and Low-to-Zero <span class="c-green">Carbon</span> (LZC) appraisals, including whole life cost analyses</li>
+            <li>Energy metering strategies</li>
+            <li>Dynamic Simulation Modelling (DSM): thermal comfort and predicted energy</li>
+            <li>Part L compliance assessments, modelling and reporting (SBEM, BRUKL and SAP)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="dgrid">
+        <div class="dcard rv" style="--dc:var(--navy)" id="mechanical">
+          <div class="dhead"><img src="/assets/icon-mechanical.png" alt="" /><div class="band">Mechanical<br />design services</div></div>
+          <span class="lab">Our specific services include:</span>
+          <ul>
+            <li>Ventilation systems</li>
+            <li>Heating systems</li>
+            <li>Comfort cooling and air-conditioning</li>
+            <li>BMS and central controls systems</li>
+            <li>Boiler replacement</li>
+            <li>System refurbishment and upgrades</li>
+          </ul>
+        </div>
+        <div class="dcard rv rv-d1" style="--dc:var(--magenta)" id="electrical">
+          <div class="dhead"><img src="/assets/icon-electrical.png" alt="" /><div class="band">Electrical<br />design services</div></div>
+          <span class="lab">Our specific services include:</span>
+          <ul>
+            <li>HV/LV distribution and infrastructure</li>
+            <li>Power generation and life safety systems</li>
+            <li>Lighting design and controls: general, external, emergency</li>
+            <li>IT / data and assistive technologies</li>
+            <li>Access, security and fire alarm systems</li>
+            <li>Lightning protection and vertical transportation</li>
+          </ul>
+        </div>
+        <div class="dcard rv rv-d2" style="--dc:var(--blue); --dc-text:#2E71A5" id="public-health">
+          <div class="dhead"><img src="/assets/icon-public-health.png" alt="" /><div class="band">Public health<br />design services</div></div>
+          <span class="lab">Our specific services include:</span>
+          <ul>
+            <li>Domestic hot and cold water systems</li>
+            <li>Above ground foul drainage systems</li>
+            <li>Rainwater and greywater harvesting</li>
+            <li>Medical gases and compressed air</li>
+            <li>Water treatment</li>
+            <li>Water neutrality assessments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SITE-WIDE CARBON IMPACT STUDIES -->
+  <section class="cis">
+    <div class="wrap">
+      <span class="mbar rv">Site-wide <span class="c-green">carbon</span> impact studies.</span>
+      <div class="cols">
+        <div class="rv">
+          <div class="ndash"></div>
+          <h3><span class="c-green">Carbon</span> reduction &amp; energy use impact studies</h3>
+          <p class="copy">Rubix MEP provides early-stage masterplanning for new or existing sites to establish a potential route to &lsquo;net zero <span class="c-green">carbon</span>&rsquo; operation, through dynamic modelling simulations. It is the differentiator behind our proudest work.</p>
+          <div class="mpills">
+            <span class="mpill"><span class="tk">&#10003;</span><span class="c-green">Carbon</span> &amp; energy reduction masterplanning</span>
+            <span class="mpill"><span class="tk">&#10003;</span>Review &amp; minimise operational running costs</span>
+            <span class="mpill"><span class="tk">&#10003;</span>Establish potential routes to &lsquo;net zero <span class="c-green">carbon</span>&rsquo;</span>
+            <span class="mpill"><span class="tk">&#10003;</span>Electric Vehicle (EV) charging sitewide impacts</span>
+            <span class="mpill"><span class="tk">&#10003;</span>Realistic use of renewable &amp; low-<span class="c-green">carbon</span> technologies</span>
+          </div>
+          <p class="closing">A <span class="c-green">carbon</span> impact study enables clients to evaluate the <span class="c-green">carbon</span> emissions impact, energy use and operational costs of a given site, so <u>long-term <span class="c-green">carbon</span> reduction masterplanning</u> can be carried out in a pragmatic manner.</p>
+          <a class="btn btn-lime go" href="/services/carbon-impact-studies">How <span class="c-green">carbon</span> impact studies work <span class="arr">&rarr;</span></a>
+        </div>
+        <div class="shots rv rv-d1">
+          <div class="shot">[ Site-wide energy model output: campus map ]</div>
+          <div class="shot">[ Dynamic simulation model: PV yield visualisation ]</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL ASSESSMENTS STRIP (child pages to come; chips non-linked for now) -->
+  <section>
+    <div class="wrap" style="padding-bottom:90px;">
+      <div class="assess rv">
+        <span class="lab">Commissioned deliverables, in-house</span>
+        <span class="chips">
+          <span>SBEM calculations</span>
+          <span>Overheating (Part O)</span>
+          <span>Thermal modelling</span>
+          <span>Part L compliance</span>
+          <span>MEP due diligence</span>
+          <span>Water neutrality</span>
+        </span>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

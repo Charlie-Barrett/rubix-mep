@@ -1,0 +1,20 @@
+---
+const {
+  title = "Let's talk about your project",
+  sub = 'Book a conversation, or take our capabilities away to review.',
+  primaryHref = '/contact',
+  primaryLabel = 'Discuss your project',
+  secondaryHref = '/capabilities',
+  secondaryLabel = 'Download capabilities (PDF)'
+} = Astro.props;
+---
+<section class="cta">
+  <div class="wrap">
+    <h2 class="disp rv" set:html={title} />
+    <p class="rv rv-d1">{sub}</p>
+    <div class="ctas rv rv-d2">
+      <a href={primaryHref} class="btn btn-lime">{primaryLabel} <span class="arr">&rarr;</span></a>
+      <a href={secondaryHref} class="btn btn-ghost">{secondaryLabel}</a>
+    </div>
+  </div>
+</section>

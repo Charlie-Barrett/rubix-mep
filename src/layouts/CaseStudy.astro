@@ -1,0 +1,147 @@
+---
+// Project case study template, per the Lampworks V1 worked example:
+// hero (capsules) -> at-a-glance -> overview (+ image slots) -> optional quote band
+// -> what we delivered (+ team/highlights chip bar) -> CTA -> related links.
+import BaseLayout from './BaseLayout.astro';
+import '../styles/project.css';
+
+const {
+  metaTitle,
+  metaDesc,
+  name,
+  displayName,        // optional HTML version of the name (e.g. carbon-in-green)
+  heroImage,          // optional; falls back to the duotone brand hero
+  capsules = [],      // [{ text, alt }]
+  lede,
+  glance = [],        // [{ n, l }]
+  overview = [],      // array of HTML paragraph strings
+  images = [],        // [{ src, alt }]
+  quote,              // optional { text, by, org }
+  scope = [],         // [{ h, p }]
+  chipsLabel = 'Project team',
+  chips = [],
+  ctaSub,
+  relatedServices = [],  // [{ label, href }]
+  otherProjects = []     // [{ label, href }]
+} = Astro.props;
+---
+<BaseLayout title={metaTitle} description={metaDesc} showCta={false}>
+  <!-- HERO -->
+  <section class="pj-hero">
+    <div class="bg" aria-hidden="true" style={heroImage ? `--hero-img:url('${heroImage}')` : undefined}></div>
+    <div class="wrap">
+      <nav class="crumb rv" aria-label="Breadcrumb"><a href="/projects">Projects</a><span class="sep">/</span><span set:html={displayName ?? name} /></nav>
+      <div class="capsules rv rv-d1">
+        {capsules.map((c) => <span class={c.alt ? 'capsule alt' : 'capsule'} set:html={c.text} />)}
+      </div>
+      <h1 class="disp rv rv-d1" set:html={displayName ?? name} />
+      <p class="lede rv rv-d2" set:html={lede} />
+      <div class="ctas rv rv-d3">
+        <a href="/contact" class="btn btn-primary">Discuss your project <span class="arr">&rarr;</span></a>
+        <a href="#overview" class="btn btn-ghost">Read the case study</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AT A GLANCE -->
+  <section class="glance" aria-label="Project at a glance">
+    <div class="wrap">
+      {glance.map((g, i) => (
+        <div class={'gitem rv' + (i >= 4 ? ' rv-d2' : i >= 2 ? ' rv-d1' : '')}>
+          <div class="n" set:html={g.n} />
+          <div class="l" set:html={g.l} />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="overview" id="overview">
+    <div class="wrap">
+      <div class="rv">
+        <div class="chead">
+          <div class="ndash"></div>
+          <h2>The <b>project</b></h2>
+        </div>
+        {overview.map((p) => <p set:html={p} />)}
+      </div>
+      {images.length > 0 && (
+        <div class="rv rv-d1">
+          {images.map((im, i) => (
+            <img
+              class={'ph-img' + (i > 0 ? ' b' : '')}
+              style={`display:block; width:100%; min-height:0; padding:0; object-fit:cover;${i > 0 ? ' margin-top:22px;' : ''}`}
+              src={im.src}
+              alt={im.alt}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- QUOTE BAND (projects with quotes get this; others omit) -->
+  {quote && (
+    <section class="pquote-band">
+      <div class="wrap">
+        <div class="pquote rv">
+          <div class="q"><span class="mk">&ldquo;</span><span set:html={quote.text} /><span class="mk">&rdquo;</span></div>
+          <div class="by"><b>{quote.by}</b>, {quote.org}</div>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- SCOPE OF DUTIES -->
+  <section class="scope">
+    <div class="wrap">
+      <div class="chead rv">
+        <div class="ndash"></div>
+        <h2>What we <b>delivered</b></h2>
+      </div>
+      <div class="sgrid">
+        {scope.map((s, i) => (
+          <div class={'sitem rv' + (i === 1 ? ' rv-d1' : i === 2 ? ' rv-d2' : '')}>
+            <div class="cpip"></div>
+            <h3 set:html={s.h} />
+            <p set:html={s.p} />
+          </div>
+        ))}
+      </div>
+      <div class="teambar rv">
+        <span class="lab">{chipsLabel}</span>
+        <span class="chips">{chips.map((c) => <span set:html={c} />)}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <h2 class="disp rv">Let's talk about your project</h2>
+      <p class="rv rv-d1">{ctaSub}</p>
+      <div class="ctas rv rv-d2">
+        <a href="/contact" class="btn btn-lime">Discuss your project <span class="arr">&rarr;</span></a>
+        <a href="/capabilities" class="btn btn-ghost">Download capabilities (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="related">
+    <div class="wrap">
+      <div class="rv">
+        <h4>Related services</h4>
+        <div class="links">{relatedServices.map((l) => <a href={l.href} set:html={l.label} />)}</div>
+      </div>
+      <div class="rv rv-d1">
+        <h4>Other projects</h4>
+        <div class="links">{otherProjects.map((l) => <a href={l.href} set:html={l.label} />)}</div>
+      </div>
+      <div class="rv rv-d2">
+        <h4>Keep exploring</h4>
+        <div class="links"><a href="/projects">All projects</a><a href="/contact">Visit us in the Jewellery Quarter</a></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
