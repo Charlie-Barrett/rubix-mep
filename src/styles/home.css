@@ -236,3 +236,7 @@
   .card{ flex:0 0 84vw; }
   .marquee .track img{ height:40px; }
 }
+
+/* Docked hero logo: subtle navy shadow so the white mark stays legible over light sections
+   (addition beyond the comp; remove if the client prefers the raw mark) */
+.hero-logo img{ filter:drop-shadow(0 2px 10px rgba(32,47,88,.45)); }
