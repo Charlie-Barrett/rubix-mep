@@ -323,3 +323,6 @@
 @media (max-width:760px){.xgrid{ grid-template-columns:1fr; }
 .susblock ul{ columns:1; }
 .fhelp{ text-align:left; }}
+
+/* Green-surface inherit for the sustainability block heading (carbon rule: inherit on green surfaces) */
+.susblock .c-green{ color:inherit; }
