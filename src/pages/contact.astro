@@ -1,15 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/contact.css';
+import Cta from '../components/Cta.astro';
 ---
 <BaseLayout
   title="Contact Us | MEP Consultants Birmingham | Rubix MEP"
-  description="Contact Rubix MEP: chartered building services consultants in Birmingham's Jewellery Quarter. JQ Modern, 120 Vyse Street, B18 6NF. Discuss your project today."
-  ctaSub="Book a conversation, or take our capabilities away to review."
-  ctaPrimaryHref="mailto:info@rubixmep.com"
+  description="Contact Rubix MEP: building services consultants in Birmingham's Jewellery Quarter. Unit 612/13B, 120 Vyse Street, B18 6NF. Discuss your project today."
 >
   <!-- HERO: Jewellery Quarter line drawing as the banner -->
   <section class="page-hero">
+    <div class="bg" role="img" aria-label="City skyline blended with forest treeline in Rubix navy duotone"></div>
     <div class="wrap">
       <div class="eyebrow rv"><span class="dot"></span>Jewellery Quarter, Birmingham</div>
       <h1 class="disp rv rv-d1">Contact us</h1>
@@ -36,20 +36,20 @@ import '../styles/contact.css';
       <div class="inner">
         <div class="map-fallback" aria-hidden="true">
           <strong>Rubix MEP</strong>
-          <span>JQ Modern, 120 Vyse Street<br />Jewellery Quarter, Birmingham B18 6NF</span>
+          <span>Unit 612/13B, 120 Vyse Street<br />Jewellery Quarter, Birmingham B18 6NF</span>
           <span class="hint">Interactive map loads when online.<br />Tap below to open directions.</span>
         </div>
-        <iframe title="Map: Rubix MEP, JQ Modern, 120 Vyse Street, Birmingham B18 6NF" loading="lazy"
-          src="https://maps.google.com/maps?q=JQ%20Modern%2C%20120%20Vyse%20Street%2C%20Birmingham%20B18%206NF&z=16&output=embed"></iframe>
-        <a class="map-tag" href="https://www.google.com/maps/search/JQ+Modern,+120+Vyse+Street,+Birmingham+B18+6NF" target="_blank" rel="noopener">
+        <iframe title="Map: Rubix MEP, 120 Vyse Street, Birmingham B18 6NF" loading="lazy"
+          src="https://maps.google.com/maps?q=120%20Vyse%20Street%2C%20Birmingham%20B18%206NF&z=16&output=embed"></iframe>
+        <a class="map-tag" href="https://www.google.com/maps/search/120+Vyse+Street,+Birmingham+B18+6NF" target="_blank" rel="noopener">
           <img src="/assets/logo-ident.png" alt="" />
-          <span><span class="t1">Rubix MEP</span><span class="t2">JQ Modern, 120 Vyse St</span></span>
+          <span><span class="t1">Rubix MEP</span><span class="t2">Unit 612/13B, 120 Vyse St</span></span>
         </a>
         <span class="map-dot" aria-hidden="true"></span>
       </div>
       <div class="map-address">
-        <span><b>Rubix MEP Ltd.</b> &middot; JQ Modern, 120 Vyse Street, Jewellery Quarter, Birmingham B18 6NF</span>
-        <a class="open" href="https://www.google.com/maps/search/JQ+Modern,+120+Vyse+Street,+Birmingham+B18+6NF" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
+        <span><b>Rubix MEP Ltd.</b> &middot; Unit 612/13B, 120 Vyse Street, Jewellery Quarter, Birmingham B18 6NF</span>
+        <a class="open" href="https://www.google.com/maps/search/120+Vyse+Street,+Birmingham+B18+6NF" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
       </div>
     </div>
   </section>
@@ -68,27 +68,28 @@ import '../styles/contact.css';
           <a class="big" href="mailto:info@rubixmep.com">info@rubixmep.com</a>
         </div>
         <div class="dcard">
+          <div class="lab">Careers</div>
+          <a class="big" href="mailto:careers@rubixmep.com">careers@rubixmep.com</a>
+        </div>
+        <div class="dcard">
           <div class="lab">Office</div>
-          <a class="big" href="tel:+441210000000">+44 (0)121 000 0000</a><span class="tbc">Number TBC</span>
+          <span class="big">Unit 612/13B, 120 Vyse Street<br />Jewellery Quarter, Birmingham B18 6NF</span>
         </div>
       </div>
       <div class="dirs rv rv-d1">
         <div class="dir">
           <h3>Alec Mabbott</h3>
           <div class="role">Director</div>
-          <a href="tel:+447710610104"><b>M.</b> +44 (0)7710 610104</a>
           <a href="mailto:alec.mabbott@rubixmep.com"><b>E.</b> alec.mabbott@rubixmep.com</a>
         </div>
         <div class="dir">
           <h3>Stuart Growcott</h3>
           <div class="role">Director</div>
-          <a href="tel:+447399301615"><b>M.</b> +44 (0)7399 301615</a>
           <a href="mailto:stuart.growcott@rubixmep.com"><b>E.</b> stuart.growcott@rubixmep.com</a>
         </div>
         <div class="dir">
           <h3>Daniel Williams</h3>
           <div class="role">Director</div>
-          <a href="tel:+447854517297"><b>M.</b> +44 (0)7854 517297</a>
           <a href="mailto:daniel.williams@rubixmep.com"><b>E.</b> daniel.williams@rubixmep.com</a>
         </div>
       </div>
@@ -121,4 +122,6 @@ import '../styles/contact.css';
       </div>
     </div>
   </section>
+  <!-- CAREERS: separate route from project enquiries -->
+  <Cta id="careers" kind="careers" light={true} title="Join the team" sub="Building services engineer looking for design-led, low-carbon work? Leave your details and we will be in touch." buttonLabel="Send my details" />
 </BaseLayout>

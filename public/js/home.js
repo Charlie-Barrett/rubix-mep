@@ -20,13 +20,14 @@
       heroLogoImg.style.width = startW + 'px';
       heroLogo.style.transform = 'translate3d(' + ((vw - startW) / 2) + 'px,' +
         ((brandHero.offsetHeight - startH) / 2) + 'px,0)';
+      heroLogo.style.setProperty('--dock', '0');
       return;
     }
     heroLogo.style.position = 'fixed';
     var endH = 44,
         endW = endH / ratio,
-        xe = 40,
-        ye = 24,
+        xe = 26,
+        ye = 14,
         heroH = brandHero.offsetHeight,
         p = Math.min(Math.max(window.scrollY / (heroH * 0.7), 0), 1),
         e = 1 - Math.pow(1 - p, 3),
@@ -37,6 +38,8 @@
         s = 1 + (endW / startW - 1) * e;
     heroLogoImg.style.width = startW + 'px';
     heroLogo.style.transform = 'translate3d(' + x + 'px,' + y + 'px,0) scale(' + s + ')';
+    /* navy tile behind the mark fades in over the last third of the dock */
+    heroLogo.style.setProperty('--dock', Math.max(0, (e - 0.66) / 0.34).toFixed(3));
   }
   function onScrollLogo() {
     if (!ticking) { ticking = true; requestAnimationFrame(placeLogo); }

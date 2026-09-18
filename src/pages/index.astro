@@ -4,12 +4,12 @@ import '../styles/home.css';
 ---
 <BaseLayout
   title="MEP Consultants | Low-Carbon Building Services | Rubix MEP"
-  description="Chartered MEP consultants delivering low-carbon building services design, RIBA 0–7. £120m+ project value across 10 sectors. Discuss your project."
+  description="MEP consultants delivering low-carbon building services design, RIBA 0 to 7. £120m+ project value across 10 sectors. Discuss your project."
   headerVariant="home"
 >
   <!-- migrating logo: hero-centre on load, docks top-left on scroll -->
-  <a class="hero-logo" id="heroLogo" href="/" aria-label="Rubix MEP, home">
-    <img id="heroLogoImg" src="/assets/logo-white-mep.png" alt="Rubix MEP" />
+  <a class="hero-logo" id="heroLogo" href="/" aria-label="Rubix MEP, home" style="--dock:0">
+    <img id="heroLogoImg" src="/assets/logo-white-tile-mep.png" alt="Rubix MEP" />
   </a>
 
   <!-- brand hero: the logo is the page on first view -->
@@ -41,7 +41,7 @@ import '../styles/home.css';
     <div class="wrap">
       <h1 class="disp rv">Low-<span class="c-green">carbon</span> building services design <span class="hl">tailored to your needs.</span></h1>
       <div class="ctas rv rv-d1">
-        <a href="/contact" class="btn btn-primary">Discuss your project <span class="arr">&rarr;</span></a>
+        <a href="#enquire" class="btn btn-primary">Discuss your project <span class="arr">&rarr;</span></a>
         <a href="/capabilities" class="btn btn-ghost">Download capabilities</a>
       </div>
     </div>
@@ -67,19 +67,18 @@ import '../styles/home.css';
           <span class="ico"><img src="/assets/icon-public-health.png" alt="" /></span>
           <h3 class="disp">Public Health</h3>
         </a>
-        <a class="pillar rv rv-d3" style="--accent:var(--lime)" href="/services#sustainability">
+        <a class="pillar rv rv-d3" style="--accent:var(--lime)" href="/services#building-physics">
           <span class="ico"><img src="/assets/icon-sustainability.png" alt="" /></span>
-          <h3 class="disp">Sustainability</h3>
+          <h3 class="disp">Building Physics</h3>
         </a>
       </div>
       <div class="diff rv">
         <div class="star" aria-hidden="true">&#9733;</div>
         <div>
           <div class="tag">Our differentiator</div>
-          <h3 class="disp"><span class="c-green">Carbon</span> impact studies</h3>
+          <h3 class="disp">Building Physics</h3>
         </div>
-        <p>Quantified <span class="c-green">carbon</span> analysis that sets us apart, informing decisions early, where they matter most.</p>
-        <a class="btn btn-lime go" href="/services/carbon-impact-studies">How it works <span class="arr">&rarr;</span></a>
+        <p>Building physics is what sets us apart: understanding how a building performs before it is built, so low-<span class="c-green">carbon</span> decisions are made early, where they matter most.</p>
       </div>
     </div>
   </section>
@@ -185,18 +184,18 @@ import '../styles/home.css';
     </div>
   </section>
 
-  <!-- rolling sectors banner (sector pages on hold, items are non-links) -->
+  <!-- sectors: static list (sector pages on hold, items are non-links) -->
   <section class="sectors-band" aria-label="Sectors we cover">
-    <div class="lab">Sectors we cover</div>
-    <div class="marquee">
-      <div class="track" id="sectorTrack">
-        <span class="sector-item"><span class="pip" style="background:var(--navy)"></span>Heritage</span>
-        <span class="sector-item"><span class="pip" style="background:var(--magenta)"></span>Later Living &amp; Care</span>
-        <span class="sector-item"><span class="pip" style="background:#fff"></span>Residential</span>
-        <span class="sector-item"><span class="pip" style="background:var(--navy)"></span>Studios &amp; Media</span>
-        <span class="sector-item"><span class="pip" style="background:var(--magenta)"></span>Education</span>
-        <span class="sector-item"><span class="pip" style="background:#fff"></span>Life Sciences</span>
-      </div>
+    <div class="wrap">
+      <div class="lab rv">Sectors we cover</div>
+      <ul class="sector-list rv rv-d1">
+        <li><span class="pip" style="background:var(--navy)"></span>Heritage</li>
+        <li><span class="pip" style="background:var(--magenta)"></span>Later Living &amp; Care</li>
+        <li><span class="pip" style="background:var(--blue)"></span>Residential</li>
+        <li><span class="pip" style="background:var(--lime)"></span>Studios &amp; Media</li>
+        <li><span class="pip" style="background:var(--navy)"></span>Education</li>
+        <li><span class="pip" style="background:var(--magenta)"></span>Life Sciences</li>
+      </ul>
     </div>
   </section>
 
@@ -218,9 +217,19 @@ import '../styles/home.css';
           <div class="fill" style="background-image:url('/assets/national-trust-photo.jpg')"></div>
           <div class="capsules">
             <span class="capsule">National Trust</span>
-            <span class="capsule alt"><span class="c-green">Carbon</span>&nbsp;Study</span>
+            <span class="capsule alt">Heritage</span>
           </div>
-          <span class="more">View project <span class="arr">&rarr;</span></span>
+          <div class="reveal">
+            <h3>Site-wide <span class="c-green">carbon</span> impact studies</h3>
+            <dl>
+              <div><dt>Client</dt><dd>National Trust</dd></div>
+              <div><dt>Project</dt><dd>Net zero <span class="c-green">carbon</span> masterplanning across the estate</dd></div>
+              <div><dt>Sector</dt><dd>Heritage</dd></div>
+              <div><dt>Scope</dt><dd>25+ sites studied UK-wide</dd></div>
+              <div><dt>Key fact</dt><dd>Supporting the Trust&rsquo;s 2030 net zero pledge</dd></div>
+            </dl>
+            <span class="more">View project <span class="arr">&rarr;</span></span>
+          </div>
         </div>
       </a>
       <a class="card rv rv-d1" href="/projects/knowle-retirement-village">
@@ -228,9 +237,19 @@ import '../styles/home.css';
           <div class="fill" style="background-image:url('/assets/knowle.jpg')"></div>
           <div class="capsules">
             <span class="capsule">Opus, Knowle</span>
-            <span class="capsule alt">&pound;34m &middot; Later Living</span>
+            <span class="capsule alt">Later Living</span>
           </div>
-          <span class="more">View project <span class="arr">&rarr;</span></span>
+          <div class="reveal">
+            <h3>Knowle Retirement Village</h3>
+            <dl>
+              <div><dt>Client</dt><dd>Opus Villages</dd></div>
+              <div><dt>Project</dt><dd>New-build retirement village, concept to RIBA Stage 3</dd></div>
+              <div><dt>Sector</dt><dd>Later Living &amp; Care</dd></div>
+              <div><dt>Value</dt><dd>c. &pound;34.0m</dd></div>
+              <div><dt>Key fact</dt><dd>EPC A, net zero energy options appraised</dd></div>
+            </dl>
+            <span class="more">View project <span class="arr">&rarr;</span></span>
+          </div>
         </div>
       </a>
       <a class="card rv rv-d2" href="/projects/shepperton-studios">
@@ -240,7 +259,17 @@ import '../styles/home.css';
             <span class="capsule">Shepperton Studios</span>
             <span class="capsule alt">Studios &amp; Media</span>
           </div>
-          <span class="more">View project <span class="arr">&rarr;</span></span>
+          <div class="reveal">
+            <h3>Shepperton Studios</h3>
+            <dl>
+              <div><dt>Client</dt><dd>Space Group</dd></div>
+              <div><dt>Project</dt><dd>Food and beverage fit-out across three buildings</dd></div>
+              <div><dt>Sector</dt><dd>Studios &amp; Media</dd></div>
+              <div><dt>Value</dt><dd>c. &pound;2.0m</dd></div>
+              <div><dt>Key fact</dt><dd>RIBA Stage 4 design, BIM Level 2 clash-free model</dd></div>
+            </dl>
+            <span class="more">View project <span class="arr">&rarr;</span></span>
+          </div>
         </div>
       </a>
       <a class="card rv rv-d3" href="/projects/the-lampworks">
@@ -248,21 +277,44 @@ import '../styles/home.css';
           <div class="fill" style="background-image:url('/assets/lampworks-cgi.png')"></div>
           <div class="capsules">
             <span class="capsule">The Lampworks</span>
-            <span class="capsule alt">&pound;23m &middot; Residential</span>
+            <span class="capsule alt">Residential</span>
           </div>
-          <span class="more">View project <span class="arr">&rarr;</span></span>
+          <div class="reveal">
+            <h3>The Lampworks</h3>
+            <dl>
+              <div><dt>Client</dt><dd>Regal ME / Build Fifty5</dd></div>
+              <div><dt>Project</dt><dd>148 build-to-rent apartments across five blocks</dd></div>
+              <div><dt>Sector</dt><dd>Residential</dd></div>
+              <div><dt>Value</dt><dd>c. &pound;23.0m</dd></div>
+              <div><dt>Key fact</dt><dd>RIBA Stage 4C construction issue, BIM Level 2</dd></div>
+            </dl>
+            <span class="more">View project <span class="arr">&rarr;</span></span>
+          </div>
         </div>
       </a>
     </div>
   </section>
 
-  <!-- testimonial -->
+  <!-- testimonials: short, staggered; full quotes live on the project pages -->
   <section class="social">
     <div class="wrap">
-      <div class="quote rv">
-        <span class="glyph" aria-hidden="true">&ldquo;</span>
-        <div class="q"><span class="mk">&ldquo;</span>&hellip; now our go-to MEP designers.<span class="mk">&rdquo;</span></div>
-        <div class="by"><b>Chris Lee</b>, Space Group</div>
+      <div class="sec-head rv">
+        <span class="kick">What our clients say</span>
+        <h2 class="disp">In their words</h2>
+      </div>
+      <div class="quotes">
+        <a class="quote rv" href="/projects/shepperton-studios">
+          <div class="q">&ldquo;Rubix were excellent and are now our go-to MEP designers.&rdquo;</div>
+          <div class="by"><b>Chris Lee</b>, Space Group</div>
+        </a>
+        <a class="quote rv rv-d1 offset" href="/projects/knowle-retirement-village">
+          <div class="q">&ldquo;A highly proactive consultancy. They have worked extremely well for us against tight deadlines and kept us well informed at all stages.&rdquo;</div>
+          <div class="by"><b>Patrick Egan</b>, Opus Villages</div>
+        </a>
+        <a class="quote rv rv-d2" href="/projects/national-trust-carbon-impact-studies">
+          <div class="q">&ldquo;Thorough, detailed, prompt and at all times highly professional.&rdquo;</div>
+          <div class="by"><b>Matthew Knowles</b>, National Trust</div>
+        </a>
       </div>
     </div>
   </section>
@@ -272,10 +324,10 @@ import '../styles/home.css';
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Rubix MEP",
-      "description": "Chartered MEP consultants delivering low-carbon building services design, RIBA Stages 0–7.",
+      "description": "MEP consultants delivering low-carbon building services design, RIBA Stages 0 to 7.",
       "url": "https://rubixmep.com/",
       "areaServed": "GB",
-      "address": { "@type": "PostalAddress", "addressLocality": "Birmingham", "addressCountry": "GB" }
+      "address": { "@type": "PostalAddress", "streetAddress": "Unit 612/13B, 120 Vyse Street", "addressLocality": "Birmingham", "postalCode": "B18 6NF", "addressCountry": "GB" }
     }
   </script>
   <script is:inline src="/js/home.js" defer></script>

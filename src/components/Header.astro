@@ -1,17 +1,22 @@
 ---
-// Site-wide header: hamburger + persistent CTA. On the homepage the logo is
-// omitted (the brand hero logo docks into the corner instead, per comp V3).
-const { variant = 'default' } = Astro.props;
+// Site-wide header: logo + transparent "Discuss your project" CTA + hamburger
+// opening a right-hand side panel. On the homepage the logo is omitted (the
+// brand hero logo docks into the corner instead). `tone` picks the logo and
+// button colours: 'dark' (default) sits on a navy banner and uses the white
+// wordmark on the white ident tile; 'light' sits on a white page and uses the
+// blue wordmark.
+const { variant = 'default', tone = 'dark' } = Astro.props;
+const logo = tone === 'light' ? '/assets/logo-blue-tile-mep.png' : '/assets/logo-white-tile-mep.png';
 ---
-<header class="header" id="header">
+<header class={`header${tone === 'light' ? ' on-light' : ''}`} id="header">
   <div class="wrap">
     {variant !== 'home' && (
       <a class="logo" href="/">
-        <img src="/assets/logo-blue-mep.png" alt="Rubix MEP Consultants" width="150" />
+        <img src={logo} alt="Rubix MEP Consultants" width="170" />
       </a>
     )}
     <div class="hdr-right">
-      <a href="/contact" class="btn btn-lime">Discuss your project</a>
+      <a href="#enquire" class="btn">Discuss your project</a>
       <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
@@ -19,14 +24,20 @@ const { variant = 'default' } = Astro.props;
   </div>
 </header>
 
-<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site navigation">
+<div class="menu-backdrop" id="menuBackdrop" aria-hidden="true"></div>
+<aside class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site navigation">
   <button class="close" id="menuClose" aria-label="Close menu">&times;</button>
   <nav>
+    <a href="/">Home</a>
     <a href="/services">Services</a>
     <a href="/projects">Projects</a>
     <a href="/capabilities">Capabilities</a>
     <a href="/about">About</a>
     <a href="/contact">Contact</a>
-    <div class="menu-cta"><a href="/contact" class="btn btn-lime">Discuss your project <span class="arr">&rarr;</span></a></div>
+    <div class="menu-cta"><a href="#enquire" class="btn btn-lime">Discuss your project <span class="arr">&rarr;</span></a></div>
   </nav>
-</div>
+  <div class="menu-foot">
+    <a href="mailto:info@rubixmep.com">info@rubixmep.com</a><br />
+    Unit 612/13B, 120 Vyse Street<br />Birmingham B18 6NF
+  </div>
+</aside>

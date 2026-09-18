@@ -13,13 +13,12 @@ const {
   title,
   description,
   headerVariant = 'default',
+  headerTone = 'dark',
   showCta = true,
   ctaTitle,
   ctaSub,
-  ctaPrimaryHref,
-  ctaPrimaryLabel,
-  ctaSecondaryHref,
-  ctaSecondaryLabel
+  ctaKind,
+  ctaOnNavy = false
 } = Astro.props;
 ---
 <!doctype html>
@@ -32,17 +31,10 @@ const {
     <link rel="icon" type="image/png" href="/assets/logo-blue.png" />
   </head>
   <body>
-    <Header variant={headerVariant} />
+    <Header variant={headerVariant} tone={headerTone} />
     <slot />
     {showCta && (
-      <Cta
-        title={ctaTitle}
-        sub={ctaSub}
-        primaryHref={ctaPrimaryHref}
-        primaryLabel={ctaPrimaryLabel}
-        secondaryHref={ctaSecondaryHref}
-        secondaryLabel={ctaSecondaryLabel}
-      />
+      <Cta title={ctaTitle} sub={ctaSub} kind={ctaKind} onNavy={ctaOnNavy} />
     )}
     <Footer />
     <script is:inline src="/js/site.js" defer></script>

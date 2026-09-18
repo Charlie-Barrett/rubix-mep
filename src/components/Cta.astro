@@ -1,20 +1,41 @@
 ---
+// Bottom-of-page enquiry form (replaces the old "Let's talk" CTA band).
+// Fields per client brief: first name, last name, company, email.
+// Submission target: HubSpot (form to be created once the licence is set up).
+// Until then the form shows the thank-you state client-side and sends nothing;
+// see public/js/site.js. `kind` tags the enquiry (project | careers).
 const {
   title = "Let's talk about your project",
-  sub = 'Book a conversation, or take our capabilities away to review.',
-  primaryHref = '/contact',
-  primaryLabel = 'Discuss your project',
-  secondaryHref = '/capabilities',
-  secondaryLabel = 'Download capabilities (PDF)'
+  sub = 'Leave your details and the right person will come back to you.',
+  kind = 'project',
+  id = 'enquire',
+  buttonLabel = 'Discuss your project',
+  onNavy = false,
+  light = false
 } = Astro.props;
 ---
-<section class="cta">
+<section class={`cta${onNavy ? ' on-navy' : ''}${light ? ' light' : ''}`} id={id}>
   <div class="wrap">
     <h2 class="disp rv" set:html={title} />
     <p class="rv rv-d1">{sub}</p>
-    <div class="ctas rv rv-d2">
-      <a href={primaryHref} class="btn btn-lime">{primaryLabel} <span class="arr">&rarr;</span></a>
-      <a href={secondaryHref} class="btn btn-ghost">{secondaryLabel}</a>
+    <div class="enq rv rv-d2" data-enquiry>
+      <form method="post" action="#" novalidate>
+        <input type="hidden" name="enquiry_type" value={kind} />
+        <div class="fields">
+          <div><label for={`${id}-first`}>First name</label><input id={`${id}-first`} name="firstname" type="text" autocomplete="given-name" required /></div>
+          <div><label for={`${id}-last`}>Last name</label><input id={`${id}-last`} name="lastname" type="text" autocomplete="family-name" required /></div>
+          <div><label for={`${id}-company`}>Company</label><input id={`${id}-company`} name="company" type="text" autocomplete="organization" /></div>
+          <div><label for={`${id}-email`}>Email address</label><input id={`${id}-email`} name="email" type="email" autocomplete="email" required /></div>
+        </div>
+        <div class="row">
+          <p class="fine">Or email us directly at <a href="mailto:info@rubixmep.com">info@rubixmep.com</a></p>
+          <button type="submit" class="btn btn-lime">{buttonLabel} <span class="arr">&rarr;</span></button>
+        </div>
+      </form>
+      <div class="done" role="status">
+        <h3>Thank you</h3>
+        <p>We have your details and will be in touch shortly.</p>
+      </div>
     </div>
   </div>
 </section>

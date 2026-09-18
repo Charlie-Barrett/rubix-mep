@@ -3,16 +3,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/about.css';
 ---
 <BaseLayout
-  title="About Us | Chartered MEP Consultants | Rubix MEP"
-  description="Meet Rubix MEP: a strong, multidisciplinary team of chartered MEP engineers led by three directors with 50+ years' combined experience. Low-carbon design, UK-wide."
-  showCta={false}
+  title="About Us | MEP Consultants, Birmingham | Rubix MEP"
+  description="Meet Rubix MEP: a strong, multidisciplinary team of MEP engineers led by three directors with 50+ years' combined experience. Low-carbon design, UK-wide."
+  ctaOnNavy={true}
 >
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="bg" role="img" aria-label="City skyline blended with forest treeline in Rubix navy duotone"></div>
     <div class="wrap">
       <div class="eyebrow rv"><span class="dot"></span>About Rubix MEP &middot; Birmingham &amp; UK-wide</div>
-      <h1 class="disp rv rv-d1">Chartered MEP engineers with <span class="c-green">carbon</span> impact built in</h1>
+      <h1 class="disp rv rv-d1">MEP engineers with <span class="c-green">carbon</span> impact built in</h1>
       <p class="lede rv rv-d2">Rubix MEP was founded by three directors with more than 50 years&rsquo; combined experience leading MEP design teams. Today we are a strong, multidisciplinary building services consultancy, trusted by the National Trust, Opus Villages and Space Group.</p>
     </div>
   </section>
@@ -34,68 +34,64 @@ import '../styles/about.css';
     </svg>
     <div class="wrap">
       <div class="ls-txt rv">
-        <span class="kick">In the heart of the Jewellery Quarter</span>
-        <h2 class="disp">Proudly based in Birmingham&rsquo;s historic Jewellery Quarter</h2>
-        <p>At the heart of innovation, creativity and engineering excellence. Working with clients across the whole of the UK.</p>
+        <h2 class="disp">Based in Birmingham. Working across the UK.</h2>
       </div>
-      <a class="btn btn-lime rv rv-d1" href="/contact">Find us <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost rv rv-d1" href="/contact">Find us <span class="arr">&rarr;</span></a>
     </div>
   </section>
 
-  <!-- LEADERSHIP -->
-  <section class="leader">
+  <!-- LEADERSHIP: three directors, prominent, hover for bio -->
+  <section class="leader" id="leadership">
     <div class="wrap">
-      <div class="rv">
+      <div class="lhead rv">
         <div class="wdash"></div>
         <h2>Meet the leadership team</h2>
         <p class="copy">Our directors, Alec, Stuart and Daniel have over 50 years&rsquo; experience leading MEP design teams and delivering multidisciplinary projects for a variety of clients across all sectors of the industry.</p>
         <div class="checks">
           <span class="check"><span class="tick">&#10003;</span>50+ years&rsquo; experience</span>
           <span class="check"><span class="tick">&#10003;</span>Multidisciplinary projects</span>
-          <span class="check"><span class="tick">&#10003;</span>Chartered engineers</span>
+          <span class="check"><span class="tick">&#10003;</span>Professionally accredited</span>
           <span class="check"><span class="tick">&#10003;</span>Covering all sectors</span>
         </div>
       </div>
-      <img class="photo rv rv-d1" src="/assets/team-office.jpg" alt="The Rubix MEP team at work in the Jewellery Quarter office, beside the Rubix brand wall" />
+      <div class="dirs">
+        <div class="tcell dir rv" tabindex="0"><img src="/assets/alec.webp" alt="Alec Mabbott, Director" /><div class="sheet"><h3>Alec Mabbott</h3><div class="role">Director</div><ul><li>Building services engineer</li><li>Mechanical &amp; sustainability lead</li><li>20+ years&rsquo; experience</li></ul></div><div class="cap"><h3>Alec Mabbott</h3><div class="role">Director</div></div></div>
+        <div class="tcell dir rv rv-d1" tabindex="0"><img src="/assets/stuart.webp" alt="Stuart Growcott, Director" /><div class="sheet"><h3>Stuart Growcott</h3><div class="role">Director</div><ul><li>Building services engineer</li><li>Electrical design lead</li><li>20+ years&rsquo; experience</li></ul></div><div class="cap"><h3>Stuart Growcott</h3><div class="role">Director</div></div></div>
+        <div class="tcell dir rv rv-d2" tabindex="0"><img src="/assets/daniel.webp" alt="Daniel Williams, Director" /><div class="sheet"><h3>Daniel Williams</h3><div class="role">Director</div><ul><li>Building services engineer</li><li>Public health &amp; mechanical lead</li><li>15+ years&rsquo; experience</li></ul></div><div class="cap"><h3>Daniel Williams</h3><div class="role">Director</div></div></div>
+      </div>
+      <p class="bio-note rv">Director bios to follow. Hover text is placeholder.</p>
+    </div>
+  </section>
+
+  <!-- VISION / VALUES / MISSION (sits above the team so it is not lost) -->
+  <section class="vvm">
+    <div class="wrap">
+      <div class="bar rv">Our vision. Our values. Our mission.</div>
+      <div class="vitems">
+        <div class="vitem rv"><div class="n">1</div><p>Exceed our obligation as engineers to champion low-<span class="c-green">carbon</span> developments that enhance the local, national and global environment.</p></div>
+        <div class="vitem rv rv-d1"><div class="n">2</div><p>Keep our values of honesty, integrity and trust at the forefront. To achieve best-in-class standards at each and every step. And, to provide our clients with expert advice, innovative yet pragmatic engineering solutions and the highest level of competency to deliver their aspirations.</p></div>
+        <div class="vitem rv rv-d2"><div class="n">3</div><p>Focus on delivering low-<span class="c-green">carbon</span>, innovative building services design solutions that are tailored to our client&rsquo;s needs.</p></div>
+      </div>
     </div>
   </section>
 
   <!-- WIDER TEAM -->
   <section class="team" id="team">
     <div class="wrap">
+      <div class="tlabel rv">
+        <div class="ndash"></div>
+        <h2>The <b>Rubix MEP</b> team</h2>
+      </div>
       <div class="tgrid">
-        <div class="tlabel rv">
-          <div class="ndash"></div>
-          <h2>The <b>Rubix MEP</b><br />team</h2>
-          <!-- Full-team page to come; link restored when /about/team is built -->
-        </div>
-        <div class="tcell dir rv" tabindex="0"><img src="/assets/alec.webp" alt="Alec Mabbott, Director" /><div class="sheet"><h3>Alec Mabbott</h3><div class="role">Director</div><ul><li>Chartered building services engineer</li><li>Mechanical &amp; sustainability lead</li><li>20+ years&rsquo; experience</li></ul></div></div>
-        <div class="tcell dir rv rv-d1" tabindex="0"><img src="/assets/stuart.webp" alt="Stuart Growcott, Director" /><div class="sheet"><h3>Stuart Growcott</h3><div class="role">Director</div><ul><li>Chartered building services engineer</li><li>Electrical design lead</li><li>20+ years&rsquo; experience</li></ul></div></div>
-        <div class="tcell dir rv rv-d2" tabindex="0"><img src="/assets/daniel.webp" alt="Daniel Williams, Director" /><div class="sheet"><h3>Daniel Williams</h3><div class="role">Director</div><ul><li>Chartered building services engineer</li><li>Public health &amp; mechanical lead</li><li>15+ years&rsquo; experience</li></ul></div></div>
         <div class="tcell rv"><img src="/assets/staff-tm.jpg" alt="Rubix MEP team member" /></div>
         <div class="tcell rv rv-d1"><img src="/assets/staff-ww.jpg" alt="Rubix MEP team member" /></div>
         <div class="tcell rv rv-d2"><img src="/assets/staff-fs.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv"><img src="/assets/staff-ab.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d1"><img src="/assets/staff-ak.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d2"><img src="/assets/staff-db.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv"><img src="/assets/staff-sz.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d1"><img src="/assets/staff-as.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d2"><img src="/assets/staff-ld.jpg" alt="Rubix MEP team member" /></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VISION / VALUES / MISSION -->
-  <section class="vvm">
-    <div class="wrap">
-      <div class="bar rv">Our vision. Our values. Our mission.</div>
-      <div class="cols">
-        <img class="vphoto rv" src="/assets/careers-fair.jpg" alt="Rubix MEP team members at a careers fair stand" />
-        <div class="vitems">
-          <div class="vitem rv"><div class="n">1</div><p>Exceed our obligation as engineers to champion low-<span class="c-green">carbon</span> developments that enhance the local, national and global environment.</p></div>
-          <div class="vitem rv rv-d1"><div class="n">2</div><p>Keep our values of honesty, integrity and trust at the forefront. To achieve best-in-class standards at each and every step. And, to provide our clients with expert advice, innovative yet pragmatic engineering solutions and the highest level of competency to deliver their aspirations.</p></div>
-          <div class="vitem rv rv-d2"><div class="n">3</div><p>Focus on delivering low-<span class="c-green">carbon</span>, innovative building services design solutions that are tailored to our client&rsquo;s needs.</p></div>
-        </div>
+        <div class="tcell rv rv-d3"><img src="/assets/staff-ab.jpg" alt="Rubix MEP team member" /></div>
+        <div class="tcell rv"><img src="/assets/staff-ak.jpg" alt="Rubix MEP team member" /></div>
+        <div class="tcell rv rv-d1"><img src="/assets/staff-db.jpg" alt="Rubix MEP team member" /></div>
+        <div class="tcell rv rv-d2"><img src="/assets/staff-sz.jpg" alt="Rubix MEP team member" /></div>
+        <div class="tcell rv rv-d3"><img src="/assets/staff-as.jpg" alt="Rubix MEP team member" /></div>
+        <div class="tcell rv"><img src="/assets/staff-ld.jpg" alt="Rubix MEP team member" /></div>
       </div>
     </div>
   </section>
@@ -103,7 +99,7 @@ import '../styles/about.css';
   <!-- ACCREDITATIONS -->
   <section class="accred">
     <div class="wrap rv">
-      <span class="lab">Chartered engineers &middot; professionally accredited</span>
+      <span class="lab">Professionally accredited</span>
       <div class="boxes">
         <div class="lg">[ IET logo ]</div>
         <div class="lg">[ Accreditation logo ]</div>
@@ -113,14 +109,13 @@ import '../styles/about.css';
   </section>
 
   <!-- CAREERS CTA -->
-  <section class="careers">
+  <section class="careers" id="careers">
     <div class="wrap">
-      <span class="kick2 rv">Join us</span>
-      <h2 class="rv rv-d1">Always on the lookout for expert MEP consultants to join the team</h2>
-      <p class="rv rv-d2">We&rsquo;re a strong, multidisciplinary team and we&rsquo;re still growing. If you&rsquo;re a building services engineer who wants <span class="c-green">carbon</span>-conscious, design-led work across ten sectors, we&rsquo;d love to hear from you.</p>
-      <div class="ctas rv rv-d3">
-        <a href="mailto:careers@rubixmep.com" class="btn btn-navy">Join the team <span class="arr">&rarr;</span></a>
-        <a href="/projects" class="btn btn-ghost-navy">See what we deliver</a>
+      <h2 class="rv">Want to join the team?</h2>
+      <p class="rv rv-d1">We&rsquo;re a strong, multidisciplinary team and we&rsquo;re still growing. If you&rsquo;re a building services engineer who wants <span class="c-green">carbon</span>-conscious, design-led work across ten sectors, we&rsquo;d love to hear from you.</p>
+      <div class="ctas rv rv-d2">
+        <a href="/contact#careers" class="btn btn-lime">Join the team <span class="arr">&rarr;</span></a>
+        <a href="/projects" class="btn btn-ghost">See what we deliver</a>
       </div>
     </div>
   </section>
