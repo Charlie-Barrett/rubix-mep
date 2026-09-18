@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/about.css';
+import Cta from '../components/Cta.astro';
 ---
 <BaseLayout
   title="About Us | MEP Consultants, Birmingham | Rubix MEP"
   description="Meet Rubix MEP: a strong, multidisciplinary team of MEP engineers led by three directors with 50+ years' combined experience. Low-carbon design, UK-wide."
-  ctaOnNavy={true}
+  showCta={false}
 >
   <!-- PAGE HERO -->
   <section class="page-hero">
@@ -36,7 +37,7 @@ import '../styles/about.css';
       <div class="ls-txt rv">
         <h2 class="disp">Based in Birmingham. Working across the UK.</h2>
       </div>
-      <a class="btn btn-ghost rv rv-d1" href="/contact">Find us <span class="arr">&rarr;</span></a>
+      <a class="btn btn-ghost-navy rv rv-d1" href="/contact">Find us <span class="arr">&rarr;</span></a>
     </div>
   </section>
 
@@ -89,34 +90,19 @@ import '../styles/about.css';
         <div class="tcell rv rv-d3"><img src="/assets/staff-ab.jpg" alt="Rubix MEP team member" /></div>
         <div class="tcell rv"><img src="/assets/staff-ak.jpg" alt="Rubix MEP team member" /></div>
         <div class="tcell rv rv-d1"><img src="/assets/staff-db.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d2"><img src="/assets/staff-sz.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d3"><img src="/assets/staff-as.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv"><img src="/assets/staff-ld.jpg" alt="Rubix MEP team member" /></div>
+        <div class="tcell rv rv-d2"><img src="/assets/staff-as.jpg" alt="Rubix MEP team member" /></div>
+        <div class="tcell rv rv-d3"><img src="/assets/staff-ld.jpg" alt="Rubix MEP team member" /></div>
       </div>
     </div>
   </section>
 
-  <!-- ACCREDITATIONS -->
-  <section class="accred">
-    <div class="wrap rv">
-      <span class="lab">Professionally accredited</span>
-      <div class="boxes">
-        <div class="lg">[ IET logo ]</div>
-        <div class="lg">[ Accreditation logo ]</div>
-        <div class="lg">[ Accreditation logo ]</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAREERS CTA -->
-  <section class="careers" id="careers">
-    <div class="wrap">
-      <h2 class="rv">Want to join the team?</h2>
-      <p class="rv rv-d1">We&rsquo;re a strong, multidisciplinary team and we&rsquo;re still growing. If you&rsquo;re a building services engineer who wants <span class="c-green">carbon</span>-conscious, design-led work across ten sectors, we&rsquo;d love to hear from you.</p>
-      <div class="ctas rv rv-d2">
-        <a href="/contact#careers" class="btn btn-lime">Join the team <span class="arr">&rarr;</span></a>
-        <a href="/projects" class="btn btn-ghost">See what we deliver</a>
-      </div>
-    </div>
-  </section>
+  <!-- CAREERS: expression of interest form, in place of the project CTA on this page -->
+  <Cta
+    id="careers"
+    kind="careers"
+    light={true}
+    title="Want to join the team?"
+    sub="We're a strong, multidisciplinary team and we're still growing. Leave your details and we will be in touch."
+    buttonLabel="Register your interest"
+  />
 </BaseLayout>

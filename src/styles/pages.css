@@ -71,7 +71,7 @@
 .client-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:40px; align-items:center; }
 .client-grid .lg{ background:#fff; border:1px solid var(--line); border-radius:12px; height:110px;
   display:flex; align-items:center; justify-content:center; padding:18px; }
-.client-grid img{ max-height:64px; max-width:80%; object-fit:contain; }
+.client-grid img{ max-height:72px; max-width:88%; object-fit:contain; }
 @media (max-width:860px){ .client-grid{ grid-template-columns:repeat(2,1fr); } }
 
 .dl-panel{ background:var(--navy); border-radius:18px; color:#fff; padding:52px;
@@ -109,3 +109,33 @@
 .proof-band .q{ font-size:19px; line-height:1.65; font-weight:600; max-width:820px; margin-top:34px; }
 .proof-band .by{ margin-top:14px; color:#C9D2E4; font-size:14px; }
 .proof-band .by b{ color:#fff; }
+
+/* ---------- capabilities brochure panel ---------- */
+.brochure{ display:grid; grid-template-columns:1.35fr 1fr; gap:60px; align-items:center;
+  background:var(--navy); color:#fff; border-radius:18px; padding:60px; }
+.brochure .ndash{ background:var(--lime); }
+.brochure h2{ font-size:clamp(22px,2.6vw,32px); font-weight:800; text-transform:uppercase;
+  line-height:1.2; }
+.bro-lede{ margin-top:16px; color:#C9D2E4; font-size:16px; line-height:1.75; }
+.bro-why{ list-style:none; margin:28px 0 32px; }
+.bro-why li{ position:relative; padding-left:26px; margin-bottom:14px; color:#C9D2E4;
+  font-size:15px; line-height:1.65; }
+.bro-why li b{ color:#fff; }
+.bro-why li::before{ content:""; position:absolute; left:0; top:8px; width:9px; height:9px;
+  border-radius:2px; background:var(--lime); }
+.bro-note{ margin-top:16px; font-size:12.5px; color:var(--grey-2); max-width:420px; }
+.bro-cover{ position:relative; display:block; aspect-ratio:1/1.24; text-decoration:none; }
+.bro-cover span{ position:absolute; inset:0; border-radius:6px; }
+.bro-cover .sheet-1{ transform:rotate(-7deg) translate(-12px,6px); background:rgba(255,255,255,.12); }
+.bro-cover .sheet-2{ transform:rotate(-3.5deg) translate(-6px,3px); background:rgba(255,255,255,.2); }
+.bro-cover .sheet-3{ background:var(--navy-2); border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 30px 60px -24px rgba(0,0,0,.6);
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:flex-end;
+  gap:8px; padding:32px 30px; transition:transform .25s ease; }
+.bro-cover:hover .sheet-3{ transform:translateY(-6px); }
+.bro-cover img{ width:72%; max-width:230px; margin-bottom:auto; }
+.bro-cover b{ font-size:22px; font-weight:800; text-transform:uppercase; letter-spacing:.02em; }
+.bro-cover i{ font-style:normal; font-size:12px; font-weight:700; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--lime); }
+@media (max-width:860px){ .brochure{ grid-template-columns:1fr; gap:40px; padding:40px 28px; }
+  .bro-cover{ max-width:280px; } }

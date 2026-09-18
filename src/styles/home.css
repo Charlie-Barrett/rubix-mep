@@ -7,7 +7,7 @@
 .sec-head p{ color:var(--grey); font-size:17px; margin-top:14px; }
 .rv-d4{ transition-delay:.32s; }
 .header .wrap{ display:flex; align-items:center; justify-content:flex-end;
-  padding-top:26px; padding-bottom:18px; }
+  max-width:none; padding-top:26px; padding-bottom:18px; }
 .brand-hero{ position:relative; background:var(--navy); color:#fff; overflow:hidden;
   min-height:72vh; display:flex; align-items:center; justify-content:center; }
 .brand-hero .bg{ position:absolute; inset:0;
@@ -17,26 +17,36 @@
 .hero-logo{ position:fixed; top:0; left:0; z-index:55; display:block;
   transform-origin:top left; will-change:transform; padding:10px 14px; border-radius:6px;
   background:rgba(32,47,88,var(--dock,0)); }
-.hero-logo img{ display:block; height:auto; }
-.brand-hero .scroll-cue{ position:absolute; left:50%; transform:translateX(-50%); bottom:30px; z-index:2;
-  display:flex; flex-direction:column; align-items:center; gap:10px;
-  color:rgba(255,255,255,.6); font-size:11px; letter-spacing:.2em; text-transform:uppercase; }
-.scroll-cue .line{ width:1px; height:44px; background:rgba(255,255,255,.35); position:relative; overflow:hidden; }
-.scroll-cue .line::after{ content:""; position:absolute; top:-40%; left:0; width:100%; height:40%;
-  background:var(--lime); animation:cue 2s ease-in-out infinite; }
-@keyframes cue{ 0%{ top:-40%; } 100%{ top:110%; } }
-@media (prefers-reduced-motion: reduce){ .scroll-cue .line::after{ animation:none; } }
+/* Lock-up geometry: everything is sized from --ident so the animated shapes register
+   exactly over the ident on the full-canvas 2875x1009 artwork. */
+.lockup{ position:relative; display:block;
+  width:calc(var(--ident,150px) * 3.205); height:calc(var(--ident,150px) * 1.125); }
+.lockup .ident{ position:absolute; left:calc(var(--ident,150px) * .059); top:calc(var(--ident,150px) * .0546);
+  width:var(--ident,150px); height:var(--ident,150px); z-index:2; transition:opacity .45s ease; }
+.lockup .ident.out{ opacity:0; }
+.lockup .ident svg{ position:absolute; display:block; overflow:visible; will-change:transform; }
+.lockup .tile{ position:absolute; left:calc(var(--ident,150px) * .048); top:calc(var(--ident,150px) * .0435);
+  width:calc(var(--ident,150px) * 1.022); height:calc(var(--ident,150px) * 1.022); background:#fff; z-index:1;
+  opacity:0; transform:scale(.6); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1); }
+.lockup .tile.in{ opacity:1; transform:none; }
+.lockup .mark{ position:absolute; inset:0; width:100%; height:100%; display:block; z-index:3;
+  opacity:0; transition:opacity .5s ease .15s; }
+.lockup .mark.in{ opacity:1; }
+@media (prefers-reduced-motion: reduce){
+  .lockup .ident{ display:none; }
+  .lockup .tile, .lockup .mark{ opacity:1; transform:none; transition:none; }
+}
 .marquee-band{ background:#fff; border-bottom:1px solid var(--line); overflow:hidden; }
-.marquee-band .lab{ text-align:center; padding-top:34px; font-size:12px; font-weight:700;
+.marquee-band .lab{ text-align:center; padding-top:40px; font-size:12px; font-weight:700;
   letter-spacing:.16em; text-transform:uppercase; color:var(--blue); }
 .marquee{ overflow:hidden; position:relative; padding:28px 0 36px;
   -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
   mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.marquee .track{ display:flex; align-items:center; gap:72px; width:max-content;
-  animation:scroll-x 36s linear infinite; }
+.marquee .track{ display:flex; align-items:center; gap:36px; width:max-content;
+  animation:scroll-x 78s linear infinite; }
 .marquee:hover .track{ animation-play-state:paused; }
-.marquee .track img{ height:52px; width:auto; object-fit:contain;
-  filter:grayscale(1); opacity:.7; transition:filter .2s ease, opacity .2s ease; }
+.marquee .track img{ height:62px; width:auto; object-fit:contain;
+  filter:grayscale(1); opacity:1; transition:filter .2s ease, opacity .2s ease; }
 .marquee .track img:hover{ filter:none; opacity:1; }
 @keyframes scroll-x{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 @media (prefers-reduced-motion: reduce){
@@ -82,7 +92,8 @@
 .diff .tag{ color:var(--lime); font-size:12px; font-weight:700; letter-spacing:.16em;
   text-transform:uppercase; margin-bottom:6px; }
 .diff h3{ font-size:23px; }
-.diff p{ color:#C6D0DC; font-size:15px; max-width:520px; margin-left:auto; }
+.diff p{ color:#C6D0DC; font-size:15px; max-width:430px; margin-left:auto; }
+.diff .go{ flex:0 0 auto; white-space:nowrap; }
 .riba{ background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .riba .inner{ padding:90px 0 110px; }
 .riba .sec-head{ text-align:center; margin:0 auto 60px; }
@@ -228,7 +239,6 @@
   .hdr-right .btn{ display:none; }
   .menu .menu-cta .btn{ display:inline-flex; }
   .brand-hero{ min-height:60vh; }
-  .brand-hero .mark{ padding:120px 24px 80px; }
   .pillars{ grid-template-columns:1fr; }
   .pillar .ico{ height:100px; }
   .projects .head-row{ padding:70px 22px 36px; }
@@ -239,7 +249,7 @@
   .card .reveal dl{ grid-template-columns:1fr; }
   .card .reveal dd{ font-size:13px; }
   .sector-list{ grid-template-columns:1fr; }
-  .marquee .track img{ height:40px; }
+  .marquee .track img{ height:46px; }
 }
 
 /* Docked hero logo: the navy tile behind the mark fades in as it docks (--dock is set by home.js),

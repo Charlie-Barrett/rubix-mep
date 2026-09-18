@@ -1,19 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/contact.css';
-import Cta from '../components/Cta.astro';
 ---
 <BaseLayout
   title="Contact Us | MEP Consultants Birmingham | Rubix MEP"
-  description="Contact Rubix MEP: building services consultants in Birmingham's Jewellery Quarter. Unit 612/13B, 120 Vyse Street, B18 6NF. Discuss your project today."
+  description="Contact Rubix MEP: building services consultants in Birmingham's Jewellery Quarter. JQ Modern, 120 Vyse Street, B18 6NF. Discuss your project."
 >
   <!-- HERO: Jewellery Quarter line drawing as the banner -->
   <section class="page-hero">
     <div class="bg" role="img" aria-label="City skyline blended with forest treeline in Rubix navy duotone"></div>
     <div class="wrap">
-      <div class="eyebrow rv"><span class="dot"></span>Jewellery Quarter, Birmingham</div>
-      <h1 class="disp rv rv-d1">Contact us</h1>
-      <p class="lede rv rv-d2">Bring your design to life, today. Get in touch.</p>
+      <h1 class="disp rv">Contact us</h1>
+      <p class="lede rv rv-d1">Bring your design to life. Get in touch.</p>
     </div>
     <svg class="hero-sky" viewBox="0 0 1200 250" fill="none" stroke="#7AB529" stroke-width="2" stroke-linecap="round" aria-hidden="true">
     <line x1="10" y1="240" x2="1190" y2="240"/>
@@ -36,20 +34,20 @@ import Cta from '../components/Cta.astro';
       <div class="inner">
         <div class="map-fallback" aria-hidden="true">
           <strong>Rubix MEP</strong>
-          <span>Unit 612/13B, 120 Vyse Street<br />Jewellery Quarter, Birmingham B18 6NF</span>
+          <span>120 Vyse Street<br />Jewellery Quarter, Birmingham B18 6NF</span>
           <span class="hint">Interactive map loads when online.<br />Tap below to open directions.</span>
         </div>
         <iframe title="Map: Rubix MEP, 120 Vyse Street, Birmingham B18 6NF" loading="lazy"
-          src="https://maps.google.com/maps?q=120%20Vyse%20Street%2C%20Birmingham%20B18%206NF&z=16&output=embed"></iframe>
-        <a class="map-tag" href="https://www.google.com/maps/search/120+Vyse+Street,+Birmingham+B18+6NF" target="_blank" rel="noopener">
+          src="https://maps.google.com/maps?q=Rubix%20MEP%20Consultants%2C%20120%20Vyse%20Street%2C%20Birmingham%20B18%206NF&z=16&output=embed"></iframe>
+        <a class="map-tag" href="https://www.google.com/maps/search/Rubix+MEP+Consultants,+120+Vyse+Street,+Birmingham+B18+6NF" target="_blank" rel="noopener">
           <img src="/assets/logo-ident.png" alt="" />
-          <span><span class="t1">Rubix MEP</span><span class="t2">Unit 612/13B, 120 Vyse St</span></span>
+          <span><span class="t1">Rubix MEP</span><span class="t2">120 Vyse Street</span></span>
         </a>
         <span class="map-dot" aria-hidden="true"></span>
       </div>
       <div class="map-address">
-        <span><b>Rubix MEP Ltd.</b> &middot; Unit 612/13B, 120 Vyse Street, Jewellery Quarter, Birmingham B18 6NF</span>
-        <a class="open" href="https://www.google.com/maps/search/120+Vyse+Street,+Birmingham+B18+6NF" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
+        <span><b>Rubix MEP Ltd.</b> &middot; JQ Modern, 120 Vyse Street, Jewellery Quarter, Birmingham B18 6NF</span>
+        <a class="open" href="https://www.google.com/maps/search/Rubix+MEP+Consultants,+120+Vyse+Street,+Birmingham+B18+6NF" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
       </div>
     </div>
   </section>
@@ -59,7 +57,7 @@ import Cta from '../components/Cta.astro';
     <div class="wrap">
       <div class="rv">
         <span class="kick">Get in touch</span>
-        <h2 class="disp">Bring your design to life, today</h2>
+        <h2 class="disp">Bring your design to life</h2>
         <p class="sub">Tell us about your project and the right person will come back to you.</p>
       </div>
       <div class="dgrid rv">
@@ -73,7 +71,7 @@ import Cta from '../components/Cta.astro';
         </div>
         <div class="dcard">
           <div class="lab">Office</div>
-          <span class="big">Unit 612/13B, 120 Vyse Street<br />Jewellery Quarter, Birmingham B18 6NF</span>
+          <span class="big">JQ Modern, 120 Vyse Street<br />Jewellery Quarter, Birmingham B18 6NF</span>
         </div>
       </div>
       <div class="dirs rv rv-d1">
@@ -122,6 +120,4 @@ import Cta from '../components/Cta.astro';
       </div>
     </div>
   </section>
-  <!-- CAREERS: separate route from project enquiries -->
-  <Cta id="careers" kind="careers" light={true} title="Join the team" sub="Building services engineer looking for design-led, low-carbon work? Leave your details and we will be in touch." buttonLabel="Send my details" />
 </BaseLayout>

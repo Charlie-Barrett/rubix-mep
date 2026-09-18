@@ -9,6 +9,8 @@
   --shadow-lg:0 30px 60px -24px rgba(32,47,88,.35);
 }
 .c-green{color:var(--lime);}
+/* Brand rule: "carbon" is Rubix green, but inherits on green surfaces so it stays legible. */
+.btn-lime .c-green, .btn-primary .c-green{ color:inherit; }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
@@ -101,8 +103,10 @@ a{ color:inherit; }
 .note{ background:#0A0E14; color:#7F8B99; font-size:11px; }
 .note .wrap{ padding:16px 40px; line-height:1.6; }
 .note b{ color:var(--lime); }
+/* Full-bleed header so the CTA and menu sit hard right against the page gutter,
+   rather than being pulled in by the 1220px content container. */
 .header .wrap{ display:flex; align-items:center; justify-content:space-between;
-  padding-top:26px; padding-bottom:18px; }
+  max-width:none; padding-top:26px; padding-bottom:18px; }
 .menu nav a{ display:block; color:#fff; text-decoration:none; font-weight:700; text-transform:uppercase;
   font-size:22px; letter-spacing:.04em; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.12);
   transition:color .18s ease, padding-left .18s ease; }

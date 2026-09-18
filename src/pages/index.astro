@@ -7,30 +7,61 @@ import '../styles/home.css';
   description="MEP consultants delivering low-carbon building services design, RIBA 0 to 7. £120m+ project value across 10 sectors. Discuss your project."
   headerVariant="home"
 >
-  <!-- migrating logo: hero-centre on load, docks top-left on scroll -->
+  <!-- Migrating logo lock-up: on load the ident shapes burst out, sweep the hero and
+       return into the mark (ported from the holding page); it then docks top-left on scroll.
+       Geometry is driven by --ident and assumes the full-canvas 2875x1009 lock-up artwork. -->
   <a class="hero-logo" id="heroLogo" href="/" aria-label="Rubix MEP, home" style="--dock:0">
-    <img id="heroLogoImg" src="/assets/logo-white-tile-mep.png" alt="Rubix MEP" />
+    <span class="lockup" id="lockup">
+      <span class="ident" id="ident" aria-hidden="true">
+        <svg data-s="1" viewBox="0 0 114 114" style="left:.3%;top:.15%;width:17.5%;height:17.5%"><circle cx="57" cy="57" r="55" fill="#7AB529"/></svg>
+        <svg data-s="2" viewBox="0 0 207 207" style="left:33.8%;top:0;width:31.9%;height:31.9%"><rect x="16" y="16" width="175" height="175" fill="none" stroke="#3F90CE" stroke-width="32"/></svg>
+        <svg data-s="3" viewBox="0 0 208 107" style="left:67.2%;top:0;width:32%;height:16.5%"><path d="M0 0H208L104 107Z" fill="#CC1383"/></svg>
+        <svg data-s="4" viewBox="0 0 212 207" style="left:0;top:33%;width:32.6%;height:31.9%"><path d="M0 0H212L0 207Z" fill="#CC1383"/></svg>
+        <svg data-s="5" viewBox="0 0 206 206" style="left:34.2%;top:33.5%;width:31.7%;height:31.7%"><circle cx="103" cy="103" r="103" fill="#7AB529"/></svg>
+        <svg data-s="6" viewBox="0 0 208 207" style="left:67.2%;top:33%;width:32%;height:31.9%"><rect width="208" height="207" fill="#3F90CE"/></svg>
+        <svg data-s="7" viewBox="0 0 212 208" style="left:0;top:66.3%;width:32.6%;height:32%"><rect width="212" height="208" fill="#7AB529"/><circle cx="106" cy="104" r="73" fill="#fff"/></svg>
+        <svg data-s="8" viewBox="0 0 127 130" style="left:33.8%;top:66.3%;width:19.5%;height:20%"><rect width="127" height="130" fill="#3F90CE"/></svg>
+        <svg data-s="9" viewBox="0 0 208 208" style="left:67.2%;top:66.3%;width:32%;height:32%"><path d="M0 0H208L105 104L208 208H0Z" fill="#CC1383"/></svg>
+      </span>
+      <span class="tile" id="heroTile" aria-hidden="true"></span>
+      <img class="mark" id="heroLogoImg" src="/assets/logo-white-lockup.png" alt="Rubix MEP" />
+    </span>
   </a>
 
   <!-- brand hero: the logo is the page on first view -->
   <section class="brand-hero" id="brandHero">
     <div class="bg" aria-hidden="true"></div>
-    <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="line"></span></div>
   </section>
 
   <!-- rolling clients banner -->
   <section class="marquee-band" aria-label="Clients we work with">
-    <div class="lab">We are proud to work with</div>
+    <div class="lab">Clients and partners we work with</div>
     <div class="marquee">
       <div class="track" id="clientTrack">
         <img src="/assets/client-national-trust.png" alt="National Trust" />
-        <img src="/assets/client-space-group.png" alt="Space Group" />
+        <img src="/assets/client-office-national-statistics.png" alt="Office for National Statistics" />
+        <img src="/assets/client-met-office.png" alt="Met Office" />
         <img src="/assets/client-cbre.png" alt="CBRE" />
-        <img src="/assets/client-hallmark.png" alt="Hallmark" />
-        <img src="/assets/client-lovett-care.jpg" alt="Lovett Care" />
-        <img src="/assets/client-grayscourt.png" alt="Grayscourt" />
-        <img src="/assets/client-batsford.png" alt="Batsford Arboretum" />
-        <img src="/assets/client-met-office.jpg" alt="Met Office" />
+        <img src="/assets/client-severn-trent.png" alt="Severn Trent" />
+        <img src="/assets/client-urban-splash.png" alt="Urban Splash" />
+        <img src="/assets/client-barchester.png" alt="Barchester Healthcare" />
+        <img src="/assets/client-space-group.png" alt="Space Group" />
+        <img src="/assets/client-hallmark.png" alt="Hallmark Luxury Care Homes" />
+        <img src="/assets/client-lovett-care.png" alt="Lovett Care Homes" />
+        <img src="/assets/client-majesticare.png" alt="Majesticare" />
+        <img src="/assets/client-opus.png" alt="Opus Villages" />
+        <img src="/assets/client-regal.png" alt="Regal" />
+        <img src="/assets/client-wren.png" alt="WREN" />
+        <img src="/assets/client-buildfifty5.png" alt="Build Fifty5" />
+        <img src="/assets/client-create-if.png" alt="Create.iF" />
+        <img src="/assets/client-fabric-plus.png" alt="Fabric+" />
+        <img src="/assets/client-mcleod-aitken.png" alt="McLeod + Aitken" />
+        <img src="/assets/client-holden-lee.png" alt="Holden + Lee" />
+        <img src="/assets/client-format-architects.png" alt="Format Architects" />
+        <img src="/assets/client-angela-swift.png" alt="Angela Swift Developments" />
+        <img src="/assets/client-elevate-property.png" alt="Elevate Property Group" />
+        <img src="/assets/client-cadence-projects.png" alt="Cadence Projects" />
+        <img src="/assets/client-sunrise-facilities.png" alt="Sunrise Facilities Management" />
       </div>
     </div>
   </section>
@@ -42,7 +73,7 @@ import '../styles/home.css';
       <h1 class="disp rv">Low-<span class="c-green">carbon</span> building services design <span class="hl">tailored to your needs.</span></h1>
       <div class="ctas rv rv-d1">
         <a href="#enquire" class="btn btn-primary">Discuss your project <span class="arr">&rarr;</span></a>
-        <a href="/capabilities" class="btn btn-ghost">Download capabilities</a>
+        <a href="/capabilities" class="btn btn-ghost">See our capabilities</a>
       </div>
     </div>
   </section>
@@ -78,7 +109,8 @@ import '../styles/home.css';
           <div class="tag">Our differentiator</div>
           <h3 class="disp">Building Physics</h3>
         </div>
-        <p>Building physics is what sets us apart: understanding how a building performs before it is built, so low-<span class="c-green">carbon</span> decisions are made early, where they matter most.</p>
+        <p>Understanding how a building performs before it is built. Our site-wide <span class="c-green">carbon</span> impact studies quantify that early, where decisions matter most.</p>
+        <a class="btn btn-lime go" href="/services/carbon-impact-studies"><span class="c-green">Carbon</span> impact studies <span class="arr">&rarr;</span></a>
       </div>
     </div>
   </section>
@@ -180,7 +212,6 @@ import '../styles/home.css';
           </div>
         </div>
       </div>
-      <div class="note-ex">Example content shown. Final stage text to be provided.</div>
     </div>
   </section>
 
@@ -327,7 +358,7 @@ import '../styles/home.css';
       "description": "MEP consultants delivering low-carbon building services design, RIBA Stages 0 to 7.",
       "url": "https://rubixmep.com/",
       "areaServed": "GB",
-      "address": { "@type": "PostalAddress", "streetAddress": "Unit 612/13B, 120 Vyse Street", "addressLocality": "Birmingham", "postalCode": "B18 6NF", "addressCountry": "GB" }
+      "address": { "@type": "PostalAddress", "streetAddress": "JQ Modern, 120 Vyse Street", "addressLocality": "Birmingham", "postalCode": "B18 6NF", "addressCountry": "GB" }
     }
   </script>
   <script is:inline src="/js/home.js" defer></script>
