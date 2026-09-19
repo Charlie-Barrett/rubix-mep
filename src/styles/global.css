@@ -9,6 +9,11 @@
   --shadow-lg:0 30px 60px -24px rgba(32,47,88,.35);
 }
 .c-green{color:var(--lime);}
+/* Display headings: one definition for the whole site. Previously duplicated in
+   five page stylesheets and missing from pages.css, which is why Capabilities,
+   Projects and Carbon impact studies rendered in sentence case. */
+.disp{ font-family:"Poppins",Arial,sans-serif;
+  font-weight:700; text-transform:uppercase; letter-spacing:.015em; line-height:1.12; }
 /* Brand rule: "carbon" is Rubix green, but inherits on green surfaces so it stays legible. */
 .btn-lime .c-green, .btn-primary .c-green{ color:inherit; }
 

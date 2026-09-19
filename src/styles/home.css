@@ -1,5 +1,3 @@
-.disp{ font-family:"Poppins",Arial,sans-serif;
-  font-weight:700; text-transform:uppercase; letter-spacing:.015em; line-height:1.12; }
 .sec-head{ max-width:720px; margin-bottom:56px; }
 .sec-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
 .sec-head.center .kick{ justify-content:center; }
@@ -243,11 +241,20 @@
   .pillar .ico{ height:100px; }
   .projects .head-row{ padding:70px 22px 36px; }
   .projects .slides{ padding:0 22px 70px; gap:16px; }
+  /* Phones: no overlay. The hover reveal has nothing to hover, so the photo sits
+     on top and the detail stacks beneath it on solid navy. */
   .card{ flex:0 0 86vw; }
-  .card .reveal{ transform:none; padding:22px 20px 20px; }
-  .card .img{ aspect-ratio:auto; min-height:420px; }
-  .card .reveal dl{ grid-template-columns:1fr; }
-  .card .reveal dd{ font-size:13px; }
+  .card .img{ aspect-ratio:auto; display:flex; flex-direction:column;
+    background:var(--navy-2); }
+  .card .img .fill{ position:relative; inset:auto; flex:0 0 190px; height:190px; }
+  .card:hover .img .fill{ transform:none; }
+  .card .img::after{ display:none; }
+  .card .capsules{ top:14px; left:14px; }
+  .card .reveal{ position:relative; transform:none; background:var(--navy-2);
+    padding:20px 18px 20px; }
+  .card .reveal h3{ font-size:18px; margin-bottom:14px; }
+  .card .reveal dl{ grid-template-columns:1fr; gap:9px; margin-bottom:16px; }
+  .card .reveal dd{ font-size:13.5px; }
   .sector-list{ grid-template-columns:1fr; }
   .marquee .track img{ height:46px; }
 }

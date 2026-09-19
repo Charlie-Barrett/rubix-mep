@@ -1,4 +1,3 @@
-.disp{ font-weight:700; text-transform:uppercase; letter-spacing:.015em; line-height:1.12; }
 .c-green{ color:var(--lime); }
 .logo{ display:flex; align-items:center; text-decoration:none; }
 .logo img{ display:block; height:44px; width:auto; }

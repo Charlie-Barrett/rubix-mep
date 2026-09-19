@@ -1,7 +1,5 @@
 .c-green{ color:var(--lime); }
 .btn-lime .c-green{ color:inherit; }
-.disp{ font-family:"Poppins",Arial,sans-serif;
-  font-weight:700; text-transform:uppercase; letter-spacing:.015em; line-height:1.12; }
 .sec-head{ max-width:720px; margin-bottom:56px; }
 .sec-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
 .sec-head.center .kick{ justify-content:center; }
@@ -100,10 +98,15 @@
 .assess .lab{ font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
   color:var(--grey); flex:0 0 auto; }
 .assess .chips{ display:flex; gap:10px; flex-wrap:wrap; }
-.assess a{ font-size:13px; font-weight:700; color:var(--navy); text-decoration:none;
-  background:#fff; border:1px solid var(--line); border-radius:100px; padding:8px 16px;
-  transition:border-color .18s ease, color .18s ease, transform .18s ease; }
-.assess a:hover{ border-color:var(--blue); color:var(--blue); transform:translateY(-2px); }
+@media (max-width:560px){ .assess .chips span, .assess .chips a{ white-space:normal; } }
+/* Chips are spans until the child pages exist, so the pill styling has to cover
+   both; only the linked version gets the hover treatment. */
+.assess .chips span, .assess .chips a{ display:inline-flex; align-items:center;
+  font-size:13px; font-weight:700; color:var(--navy); text-decoration:none;
+  background:#fff; border:1px solid var(--line); border-radius:100px; padding:9px 18px;
+  line-height:1.2; white-space:nowrap; }
+.assess .chips a{ transition:border-color .18s ease, color .18s ease, transform .18s ease; }
+.assess .chips a:hover{ border-color:var(--blue); color:var(--blue); transform:translateY(-2px); }
 .cases{ background:var(--navy); color:#fff; position:relative; overflow:hidden; }
 .cases::before{ content:""; position:absolute; left:-120px; bottom:-160px; width:420px; height:420px;
   border-radius:50%; background:radial-gradient(circle, rgba(0,114,206,.18), transparent 65%); }
