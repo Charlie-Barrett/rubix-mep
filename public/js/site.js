@@ -47,4 +47,13 @@
       form.closest('[data-enquiry]').classList.add('sent');
     });
   });
+
+  /* ---- CTA anchors fall back to the contact page ----
+     Pages without a project enquiry form (About carries only the careers form)
+     must not send "Discuss your project" to whatever form happens to be there. */
+  if (!document.getElementById('enquire')) {
+    document.querySelectorAll('a[href="#enquire"]').forEach(function (a) {
+      a.setAttribute('href', '/contact#enquire');
+    });
+  }
 })();
