@@ -4,7 +4,8 @@
 // brand hero logo docks into the corner instead). `tone` picks the logo and
 // button colours: 'dark' (default) sits on a navy banner and uses the white
 // wordmark on the white ident tile; 'light' sits on a white page and uses the
-// blue wordmark.
+// blue wordmark. The header is fixed and turns into a slim navy bar on scroll
+// (site.js adds `scrolled`), so on light pages a second, white logo is swapped in.
 const { variant = 'default', tone = 'dark' } = Astro.props;
 const logo = tone === 'light' ? '/assets/logo-blue-tile-mep.png' : '/assets/logo-white-tile-mep.png';
 ---
@@ -12,7 +13,8 @@ const logo = tone === 'light' ? '/assets/logo-blue-tile-mep.png' : '/assets/logo
   <div class="wrap">
     {variant !== 'home' && (
       <a class="logo" href="/">
-        <img src={logo} alt="Rubix MEP Consultants" width="170" />
+        <img class="lg-rest" src={logo} alt="Rubix MEP Consultants" width="170" />
+        {tone === 'light' && <img class="lg-scrolled" src="/assets/logo-white-tile-mep.png" alt="Rubix MEP Consultants" width="170" />}
       </a>
     )}
     <div class="hdr-right">
@@ -38,6 +40,6 @@ const logo = tone === 'light' ? '/assets/logo-blue-tile-mep.png' : '/assets/logo
   </nav>
   <div class="menu-foot">
     <a href="mailto:info@rubixmep.com">info@rubixmep.com</a><br />
-    JQ Modern, 120 Vyse Street<br />Birmingham B18 6NF
+    JQ Modern, 120 Vyse Street<br />Jewellery Quarter, Birmingham B18 6NF
   </div>
 </aside>

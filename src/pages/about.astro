@@ -2,95 +2,108 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/about.css';
 import Cta from '../components/Cta.astro';
+import Skyline from '../components/Skyline.astro';
+
+// Director bios and bullets per the client's 01.10 review. Each director carries one
+// accent colour (Alec green, Stuart light blue, Dan pink) for the role and bullets.
+const directors = [
+  {
+    name: 'Alec Mabbott', img: '/assets/alec.webp', accent: 'var(--lime)',
+    bio: 'As a CIBSE Chartered Engineer (CEng MCIBSE) with a mechanical engineering bias and over 15 years&rsquo; experience, Alec has delivered small to large-scale projects with complex MEP requirements across a range of sectors. He regularly fulfils a client-facing role and leads multi-disciplinary design teams to project success, combining practical engineering design with expertise in Revit 3D modelling, BIM coordination and <span class="c-green">carbon</span> impact studies.',
+    points: ['Multi-sector expertise', 'Sustainability &amp; <span class="c-green">Carbon</span> Impact Studies Lead', 'Building Information Modelling (BIM) Lead']
+  },
+  {
+    name: 'Stuart Growcott', img: '/assets/stuart.webp', accent: 'var(--blue)',
+    bio: 'Stuart has 30 years of experience across the construction industry, with a proven track record managing multi-discipline teams to deliver innovative building services project solutions. His approach has benefited from having worked for both Contractors and Consultancy practices, gaining a comprehensive understanding of building services solutions to meet environmental, economic, and social responsibilities whilst adopting pragmatic and holistic design methods.',
+    points: ['30+ years&rsquo; experience', 'Expertise in Healthcare &amp; Later Living', 'Experience in both contracting &amp; consultancy']
+  },
+  {
+    name: 'Daniel Williams', img: '/assets/daniel.webp', accent: 'var(--magenta)',
+    bio: 'As a Chartered Electrical Engineer (BEng (Hons), CEng, MIET) with over 20 years&rsquo; experience, Daniel combines hands-on installation knowledge with technical design expertise, having started his career carrying out electrical installations on site. He has led teams on numerous successful projects across a variety of sectors and delivered MEP engineering design for projects ranging from concept through to detailed design and installation. Daniel has extensive experience in both new-build and refurbishment schemes, including heritage and historic buildings.',
+    points: ['Electrical Lead', '20+ years&rsquo; experience', 'Multi-sector expertise']
+  }
+];
+
+// Wider team. `z` zooms a headshot in (and `oy` raises the crop) where the client
+// asked for a tighter torso-and-head framing to match the others. All headshots are
+// due to be reshot on 19 October; Sarah's photo is still to come.
+const team = [
+  { img: '/assets/staff-tm.jpg', z: 1.3, oy: '45%', ty: '-15%' },
+  { img: '/assets/staff-ww.jpg', z: 1.25, oy: '42%', ty: '-10%' },
+  { img: '/assets/staff-fs.jpg', z: 1.3, oy: '48%', ty: '-17%' },
+  { img: '/assets/staff-ab.jpg' },
+  { img: '/assets/staff-ak.jpg', z: 1.4, oy: '45%', ty: '-15%' },
+  { img: '/assets/staff-db.jpg', z: 1.25, oy: '33%', ty: '-5%' },
+  { img: '/assets/staff-as.jpg' },
+  { img: '/assets/staff-ld.jpg', z: 1.3, oy: '42%', ty: '-12%' }
+];
 ---
 <BaseLayout
   title="About Us | MEP Consultants, Birmingham | Rubix MEP"
-  description="Meet Rubix MEP: a strong, multidisciplinary team of MEP engineers led by three directors with 50+ years' combined experience. Low-carbon design, UK-wide."
+  description="Building services engineering built on trust. Meet the Rubix MEP team: directors Alec Mabbott, Stuart Growcott and Daniel Williams and a multidisciplinary team in Birmingham's Jewellery Quarter."
   showCta={false}
 >
   <!-- PAGE HERO -->
   <section class="page-hero">
     <div class="bg" role="img" aria-label="City skyline blended with forest treeline in Rubix navy duotone"></div>
     <div class="wrap">
-      <div class="eyebrow rv"><span class="dot"></span>About Rubix MEP &middot; Birmingham &amp; UK-wide</div>
-      <h1 class="disp rv rv-d1">MEP engineers with <span class="c-green">carbon</span> impact built in</h1>
-      <p class="lede rv rv-d2">Rubix MEP was founded by three directors with more than 50 years&rsquo; combined experience leading MEP design teams. Today we are a strong, multidisciplinary building services consultancy, trusted by the National Trust, Opus Villages and Space Group.</p>
+      <h1 class="disp rv">Building services engineering built on <span class="c-blue">trust</span>.</h1>
+      <p class="lede rv rv-d1">Our people are at the heart of Rubix MEP. Guided by honesty, integrity and trust, we combine technical excellence with pragmatic engineering to deliver innovative solutions and exceptional outcomes for our clients.</p>
     </div>
   </section>
 
-  <!-- LOCATION STRIP: Jewellery Quarter, links to Contact -->
+  <!-- LOCATION STRIP: Jewellery Quarter -->
   <section class="locstrip">
-    <svg class="ls-sky" viewBox="0 0 1200 250" fill="none" stroke="#7AB529" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-      <line x1="10" y1="240" x2="1190" y2="240"/>
-      <rect x="40" y="140" width="170" height="100"/><path d="M95 140 v-20 h60 v20"/><path d="M100 120 a25 25 0 0 1 50 0"/><line x1="125" y1="88" x2="125" y2="95"/><rect x="56" y="156" width="12" height="14"/><rect x="56" y="182" width="12" height="14"/><rect x="56" y="208" width="12" height="14"/><rect x="80" y="156" width="12" height="14"/><rect x="80" y="182" width="12" height="14"/><rect x="80" y="208" width="12" height="14"/><rect x="104" y="156" width="12" height="14"/><rect x="104" y="182" width="12" height="14"/><rect x="104" y="208" width="12" height="14"/><rect x="128" y="156" width="12" height="14"/><rect x="128" y="182" width="12" height="14"/><rect x="128" y="208" width="12" height="14"/><line x1="40" y1="150" x2="210" y2="150"/>
-      <circle cx="243" cy="212" r="16"/><line x1="243" y1="228" x2="243" y2="240"/>
-      <rect x="278" y="70" width="36" height="170"/><path d="M278 70 L296 44 L314 70"/><rect x="287" y="118" width="12" height="16"/><rect x="287" y="146" width="12" height="16"/><rect x="287" y="174" width="12" height="16"/><rect x="287" y="202" width="12" height="16"/>
-      <rect x="350" y="100" width="115" height="140"/><line x1="350" y1="112" x2="465" y2="112"/><rect x="364" y="124" width="10" height="13"/><rect x="381" y="124" width="10" height="13"/><rect x="398" y="124" width="10" height="13"/><rect x="415" y="124" width="10" height="13"/><rect x="432" y="124" width="10" height="13"/><rect x="364" y="145" width="10" height="13"/><rect x="381" y="145" width="10" height="13"/><rect x="398" y="145" width="10" height="13"/><rect x="415" y="145" width="10" height="13"/><rect x="432" y="145" width="10" height="13"/><rect x="364" y="166" width="10" height="13"/><rect x="381" y="166" width="10" height="13"/><rect x="398" y="166" width="10" height="13"/><rect x="415" y="166" width="10" height="13"/><rect x="432" y="166" width="10" height="13"/><rect x="364" y="187" width="10" height="13"/><rect x="381" y="187" width="10" height="13"/><rect x="398" y="187" width="10" height="13"/><rect x="415" y="187" width="10" height="13"/><rect x="432" y="187" width="10" height="13"/><rect x="364" y="208" width="10" height="13"/><rect x="381" y="208" width="10" height="13"/><rect x="398" y="208" width="10" height="13"/><rect x="415" y="208" width="10" height="13"/><rect x="432" y="208" width="10" height="13"/>
-      <rect x="492" y="62" width="95" height="178"/><path d="M492 62 h95"/><rect x="505" y="76" width="10" height="13"/><rect x="522" y="76" width="10" height="13"/><rect x="539" y="76" width="10" height="13"/><rect x="556" y="76" width="10" height="13"/><rect x="505" y="97" width="10" height="13"/><rect x="522" y="97" width="10" height="13"/><rect x="539" y="97" width="10" height="13"/><rect x="556" y="97" width="10" height="13"/><rect x="505" y="118" width="10" height="13"/><rect x="522" y="118" width="10" height="13"/><rect x="539" y="118" width="10" height="13"/><rect x="556" y="118" width="10" height="13"/><rect x="505" y="139" width="10" height="13"/><rect x="522" y="139" width="10" height="13"/><rect x="539" y="139" width="10" height="13"/><rect x="556" y="139" width="10" height="13"/><rect x="505" y="160" width="10" height="13"/><rect x="522" y="160" width="10" height="13"/><rect x="539" y="160" width="10" height="13"/><rect x="556" y="160" width="10" height="13"/><rect x="505" y="181" width="10" height="13"/><rect x="522" y="181" width="10" height="13"/><rect x="539" y="181" width="10" height="13"/><rect x="556" y="181" width="10" height="13"/><rect x="505" y="202" width="10" height="13"/><rect x="522" y="202" width="10" height="13"/><rect x="539" y="202" width="10" height="13"/><rect x="556" y="202" width="10" height="13"/><line x1="512" y1="52" x2="512" y2="62"/><line x1="540" y1="46" x2="540" y2="62"/><line x1="568" y1="52" x2="568" y2="62"/>
-      <circle cx="618" cy="206" r="20"/><line x1="618" y1="226" x2="618" y2="240"/>
-      <rect x="660" y="128" width="120" height="112"/><path d="M660 128 L720 96 L780 128"/><circle cx="720" cy="118" r="7"/><rect x="676" y="146" width="12" height="15"/><rect x="702" y="146" width="12" height="15"/><rect x="728" y="146" width="12" height="15"/><rect x="754" y="146" width="12" height="15"/><rect x="676" y="174" width="12" height="15"/><rect x="702" y="174" width="12" height="15"/><rect x="728" y="174" width="12" height="15"/><rect x="754" y="174" width="12" height="15"/><rect x="676" y="202" width="12" height="15"/><rect x="702" y="202" width="12" height="15"/><rect x="728" y="202" width="12" height="15"/><rect x="754" y="202" width="12" height="15"/>
-      <rect x="806" y="84" width="100" height="156"/><line x1="806" y1="96" x2="906" y2="96"/><rect x="819" y="108" width="10" height="13"/><rect x="836" y="108" width="10" height="13"/><rect x="853" y="108" width="10" height="13"/><rect x="870" y="108" width="10" height="13"/><rect x="819" y="129" width="10" height="13"/><rect x="836" y="129" width="10" height="13"/><rect x="853" y="129" width="10" height="13"/><rect x="870" y="129" width="10" height="13"/><rect x="819" y="150" width="10" height="13"/><rect x="836" y="150" width="10" height="13"/><rect x="853" y="150" width="10" height="13"/><rect x="870" y="150" width="10" height="13"/><rect x="819" y="171" width="10" height="13"/><rect x="836" y="171" width="10" height="13"/><rect x="853" y="171" width="10" height="13"/><rect x="870" y="171" width="10" height="13"/><rect x="819" y="192" width="10" height="13"/><rect x="836" y="192" width="10" height="13"/><rect x="853" y="192" width="10" height="13"/><rect x="870" y="192" width="10" height="13"/><rect x="819" y="213" width="10" height="13"/><rect x="836" y="213" width="10" height="13"/><rect x="853" y="213" width="10" height="13"/><rect x="870" y="213" width="10" height="13"/>
-      <path d="M940 240 v-95 a62 62 0 0 1 124 0 v95" stroke="#3F90CE"/><path d="M958 240 v-88 a44 44 0 0 1 88 0 v88" stroke="#3F90CE"/><line x1="1002" y1="152" x2="1002" y2="83" stroke="#3F90CE"/>
-      <circle cx="1108" cy="210" r="18"/><line x1="1108" y1="228" x2="1108" y2="240"/><circle cx="1152" cy="218" r="12"/><line x1="1152" y1="230" x2="1152" y2="240"/>
-    </svg>
+    <Skyline class="ls-sky" />
     <div class="wrap">
       <div class="ls-txt rv">
-        <h2 class="disp">Based in Birmingham. Working across the UK.</h2>
+        <h2 class="disp">Proudly based in Birmingham&rsquo;s Jewellery Quarter. Working across the UK.</h2>
       </div>
     </div>
   </section>
 
-  <!-- LEADERSHIP: three directors, prominent, hover for bio -->
-  <section class="leader" id="leadership">
-    <div class="wrap">
-      <div class="lhead rv">
-        <div class="wdash"></div>
-        <h2>Meet the leadership team</h2>
-        <p class="copy">Our directors, Alec, Stuart and Daniel have over 50 years&rsquo; experience leading MEP design teams and delivering multidisciplinary projects for a variety of clients across all sectors of the industry.</p>
-        <div class="checks">
-          <span class="check"><span class="tick">&#10003;</span>50+ years&rsquo; experience</span>
-          <span class="check"><span class="tick">&#10003;</span>Multidisciplinary projects</span>
-          <span class="check"><span class="tick">&#10003;</span>Professionally accredited</span>
-          <span class="check"><span class="tick">&#10003;</span>Covering all sectors</span>
-        </div>
-      </div>
-      <div class="dirs">
-        <div class="tcell dir rv" tabindex="0"><img src="/assets/alec.webp" alt="Alec Mabbott, Director" /><div class="sheet"><h3>Alec Mabbott</h3><div class="role">Director</div><ul><li>Building services engineer</li><li>Mechanical &amp; sustainability lead</li><li>20+ years&rsquo; experience</li></ul></div><div class="cap"><h3>Alec Mabbott</h3><div class="role">Director</div></div></div>
-        <div class="tcell dir rv rv-d1" tabindex="0"><img src="/assets/stuart.webp" alt="Stuart Growcott, Director" /><div class="sheet"><h3>Stuart Growcott</h3><div class="role">Director</div><ul><li>Building services engineer</li><li>Electrical design lead</li><li>20+ years&rsquo; experience</li></ul></div><div class="cap"><h3>Stuart Growcott</h3><div class="role">Director</div></div></div>
-        <div class="tcell dir rv rv-d2" tabindex="0"><img src="/assets/daniel.webp" alt="Daniel Williams, Director" /><div class="sheet"><h3>Daniel Williams</h3><div class="role">Director</div><ul><li>Building services engineer</li><li>Public health &amp; mechanical lead</li><li>15+ years&rsquo; experience</li></ul></div><div class="cap"><h3>Daniel Williams</h3><div class="role">Director</div></div></div>
-      </div>
-      <p class="bio-note rv">Director bios to follow. Hover text is placeholder.</p>
-    </div>
-  </section>
-
-  <!-- VISION / VALUES / MISSION (sits above the team so it is not lost) -->
-  <section class="vvm">
-    <div class="wrap">
-      <div class="bar rv">Our vision. Our values. Our mission.</div>
-      <div class="vitems">
-        <div class="vitem rv"><div class="n">1</div><p>Exceed our obligation as engineers to champion low-<span class="c-green">carbon</span> developments that enhance the local, national and global environment.</p></div>
-        <div class="vitem rv rv-d1"><div class="n">2</div><p>Keep our values of honesty, integrity and trust at the forefront. To achieve best-in-class standards at each and every step. And, to provide our clients with expert advice, innovative yet pragmatic engineering solutions and the highest level of competency to deliver their aspirations.</p></div>
-        <div class="vitem rv rv-d2"><div class="n">3</div><p>Focus on delivering low-<span class="c-green">carbon</span>, innovative building services design solutions that are tailored to our client&rsquo;s needs.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WIDER TEAM -->
+  <!-- THE RUBIX MEP TEAM: directors and the wider team in one section (01.10 review) -->
   <section class="team" id="team">
     <div class="wrap">
       <div class="tlabel rv">
         <div class="ndash"></div>
         <h2>The <b>Rubix MEP</b> team</h2>
+        <p class="copy">Our directors, Alec, Stuart and Daniel have over 50 years&rsquo; experience leading MEP design teams and delivering multidisciplinary projects for a variety of clients across all sectors of the industry.</p>
+      </div>
+      <div class="dirs" id="leadership">
+        {directors.map((d, i) => (
+          <article class={'dcard rv' + (i ? ` rv-d${i}` : '')} style={`--acc:${d.accent}`}>
+            <div class="ph"><img src={d.img} alt={`${d.name}, Director`} /></div>
+            <div class="body">
+              <h3>{d.name}</h3>
+              <div class="role">Director</div>
+              <p set:html={d.bio} />
+              <ul>{d.points.map((pt) => <li set:html={pt} />)}</ul>
+            </div>
+          </article>
+        ))}
       </div>
       <div class="tgrid">
-        <div class="tcell rv"><img src="/assets/staff-tm.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d1"><img src="/assets/staff-ww.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d2"><img src="/assets/staff-fs.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d3"><img src="/assets/staff-ab.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv"><img src="/assets/staff-ak.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d1"><img src="/assets/staff-db.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d2"><img src="/assets/staff-as.jpg" alt="Rubix MEP team member" /></div>
-        <div class="tcell rv rv-d3"><img src="/assets/staff-ld.jpg" alt="Rubix MEP team member" /></div>
+        {team.map((t, i) => (
+          <div class={'tcell rv' + (i % 4 ? ` rv-d${i % 4}` : '')} style={t.z ? `--z:${t.z}; --oy:${t.oy}; --ty:${t.ty}` : undefined}>
+            <img src={t.img} alt="Rubix MEP team member" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION / VALUES / MISSION: moved to the foot of the page (01.10 review) -->
+  <section class="vvm">
+    <div class="wrap">
+      <div class="rv">
+        <div class="ndash navy"></div>
+        <h2 class="bar">Our vision. Our values. Our mission.</h2>
+      </div>
+      <div class="vitems">
+        <div class="vitem rv" style="--acc:var(--lime)"><div class="n">1</div><p>Exceed our obligation as engineers to champion low-<span class="c-green">carbon</span> developments that enhance the local, national and global environment.</p></div>
+        <div class="vitem rv rv-d1" style="--acc:var(--magenta)"><div class="n">2</div><p>Keep our values of honesty, integrity and trust at the forefront. To achieve best-in-class standards at each and every step. And, to provide our clients with expert advice, innovative yet pragmatic engineering solutions and the highest level of competency to deliver their aspirations.</p></div>
+        <div class="vitem rv rv-d2" style="--acc:var(--blue)"><div class="n">3</div><p>Focus on delivering low-<span class="c-green">carbon</span>, innovative building services design solutions that are tailored to our client&rsquo;s needs.</p></div>
       </div>
     </div>
   </section>
@@ -103,5 +116,7 @@ import Cta from '../components/Cta.astro';
     title="Want to join the team?"
     sub="We're a strong, multidisciplinary team and we're still growing. Leave your details and we will be in touch."
     buttonLabel="Register your interest"
+    messageLabel="Tell us a little about yourself"
+    email="careers@rubixmep.com"
   />
 </BaseLayout>

@@ -1,15 +1,18 @@
 ---
 // Bottom-of-page enquiry form (replaces the old "Let's talk" CTA band).
-// Fields per client brief: first name, last name, company, email.
-// Submission target: HubSpot (form to be created once the licence is set up).
-// Until then the form shows the thank-you state client-side and sends nothing;
-// see public/js/site.js. `kind` tags the enquiry (project | careers).
+// Fields per client brief: first name, last name, company, email, plus a short
+// message box (added at the 01.10 review). Submission target: HubSpot (form to
+// be created once the licence is set up). Until then the form shows the
+// thank-you state client-side and sends nothing; see public/js/site.js.
+// `kind` tags the enquiry (project | careers); `email` is the direct address shown.
 const {
   title = "Let's talk about your project",
   sub = 'Leave your details and the right person will come back to you.',
   kind = 'project',
   id = 'enquire',
   buttonLabel = 'Discuss your project',
+  messageLabel = 'Tell us about your enquiry or project',
+  email = 'info@rubixmep.com',
   onNavy = false,
   light = false
 } = Astro.props;
@@ -26,10 +29,11 @@ const {
           <div><label for={`${id}-last`}>Last name</label><input id={`${id}-last`} name="lastname" type="text" autocomplete="family-name" required /></div>
           <div><label for={`${id}-company`}>Company</label><input id={`${id}-company`} name="company" type="text" autocomplete="organization" /></div>
           <div><label for={`${id}-email`}>Email address</label><input id={`${id}-email`} name="email" type="email" autocomplete="email" required /></div>
+          <div class="full"><label for={`${id}-message`}>{messageLabel}</label><textarea id={`${id}-message`} name="message" rows="4"></textarea></div>
         </div>
         <div class="row">
-          <p class="fine">Or email us directly at <a href="mailto:info@rubixmep.com">info@rubixmep.com</a></p>
-          <button type="submit" class="btn btn-lime">{buttonLabel} <span class="arr">&rarr;</span></button>
+          <p class="fine">Or email us directly at <a href={`mailto:${email}`}>{email}</a></p>
+          <button type="submit" class="btn btn-form">{buttonLabel} <span class="arr">&rarr;</span></button>
         </div>
       </form>
       <div class="done" role="status">

@@ -23,6 +23,20 @@
     addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
   }
 
+  /* ---- sticky header: transparent over the banner, slim navy bar once scrolled ---- */
+  var header = document.getElementById('header');
+  if (header) {
+    var hdrTick = false;
+    var setHeader = function () {
+      hdrTick = false;
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    };
+    addEventListener('scroll', function () {
+      if (!hdrTick) { hdrTick = true; requestAnimationFrame(setHeader); }
+    }, { passive: true });
+    setHeader();
+  }
+
   /* ---- scroll reveal ---- */
   var els = document.querySelectorAll('.rv');
   if (!('IntersectionObserver' in window) || reduced) {

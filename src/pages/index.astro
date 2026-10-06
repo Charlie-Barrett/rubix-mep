@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/home.css';
+import { projects } from '../data/projects.js';
 ---
 <BaseLayout
   title="MEP Consultants | Low-Carbon Building Services | Rubix MEP"
-  description="MEP consultants delivering low-carbon building services design, RIBA 0 to 7. £120m+ project value across 10 sectors. Discuss your project."
+  description="Delivering low-carbon, innovative building services design solutions, tailored to your needs. MEP consultants, RIBA Stages 0 to 7, Birmingham and UK-wide."
   headerVariant="home"
 >
   <!-- Migrating logo lock-up: on load the ident shapes burst out, sweep the hero and
@@ -70,9 +71,9 @@ import '../styles/home.css';
   <section class="intro">
     <div class="bg" role="img" aria-label="City skyline blended with forest treeline in Rubix navy duotone"></div>
     <div class="wrap">
-      <h1 class="disp rv">Low-<span class="c-green">carbon</span> building services design <span class="hl">tailored to your needs.</span></h1>
+      <h1 class="disp rv">Delivering low-<span class="c-green">carbon</span>, <span class="c-pink">innovative</span> building services design solutions, <span class="c-blue">tailored to your needs.</span></h1>
       <div class="ctas rv rv-d1">
-        <a href="#enquire" class="btn btn-primary">Discuss your project <span class="arr">&rarr;</span></a>
+        <a href="#enquire" class="btn btn-white">Discuss your project <span class="arr">&rarr;</span></a>
         <a href="/capabilities" class="btn btn-ghost">See our capabilities</a>
       </div>
     </div>
@@ -107,10 +108,9 @@ import '../styles/home.css';
         <div class="star" aria-hidden="true">&#9733;</div>
         <div>
           <div class="tag">Our differentiator</div>
-          <h3 class="disp">Building Physics</h3>
+          <h3 class="disp">Practical expertise</h3>
         </div>
-        <p>Understanding how a building performs before it is built. Our site-wide <span class="c-green">carbon</span> impact studies quantify that early, where decisions matter most.</p>
-        <a class="btn btn-lime go" href="/services/carbon-impact-studies"><span class="c-green">Carbon</span> impact studies <span class="arr">&rarr;</span></a>
+        <p>At Rubix MEP, senior expertise doesn&rsquo;t disappear after appointment. Our directors stay involved throughout the project, providing direct access to experienced engineers, fast decision-making, and pragmatic solutions that deliver real-world value.</p>
       </div>
     </div>
   </section>
@@ -128,9 +128,9 @@ import '../styles/home.css';
           <div class="riba-pop">
             <h4>Stage 0: Strategic Definition</h4>
             <ul>
-              <li>Business case &amp; sustainability aspirations</li>
-              <li>Site energy &amp; infrastructure review</li>
-              <li>Early <span class="c-green">carbon</span> benchmarking</li>
+              <li>Site services infrastructure assessments</li>
+              <li>Early energy and <span class="c-green">carbon</span> analysis and benchmarking</li>
+              <li>Pre-planning MEP feasibility reviews</li>
             </ul>
           </div>
         </div>
@@ -139,9 +139,9 @@ import '../styles/home.css';
           <div class="riba-pop">
             <h4>Stage 1: Preparation &amp; Briefing</h4>
             <ul>
-              <li>MEP project brief &amp; feasibility studies</li>
-              <li>Condition &amp; capacity surveys</li>
-              <li>Budget cost advice</li>
+              <li>Technical due diligence &amp; feasibility</li>
+              <li>MEP condition and capacity surveys</li>
+              <li>Low-<span class="c-green">carbon</span> options appraisals</li>
             </ul>
           </div>
         </div>
@@ -150,9 +150,9 @@ import '../styles/home.css';
           <div class="riba-pop">
             <h4>Stage 2: Concept Design</h4>
             <ul>
-              <li>MEP servicing strategy</li>
-              <li>Low-<span class="c-green">carbon</span> options appraisal</li>
-              <li>Plant space &amp; riser allowances</li>
+              <li>Plant &amp; riser spatial allowances and MEP servicing strategy</li>
+              <li>Energy statements for planning, AD Part L SBEM &amp; SAP assessments</li>
+              <li>AD Part O &amp; CIBSE TM52 (overheating) modelling analysis</li>
             </ul>
           </div>
         </div>
@@ -161,9 +161,9 @@ import '../styles/home.css';
           <div class="riba-pop">
             <h4>Stage 3: Spatial Coordination</h4>
             <ul>
-              <li>Coordinated MEP layouts</li>
-              <li>Thermal modelling &amp; Part L checks</li>
-              <li>Planning-stage energy statements</li>
+              <li>Coordinated MEP design layouts (CAD or Revit 3D / BIM Level 2)</li>
+              <li>Performance design specifications and drawings</li>
+              <li>Budget MEP cost advice</li>
             </ul>
           </div>
         </div>
@@ -172,20 +172,20 @@ import '../styles/home.css';
           <div class="riba-pop">
             <h4>Stage 4: Technical Design</h4>
             <ul>
-              <li>Detailed design &amp; specifications</li>
-              <li>Construction-ready drawings</li>
-              <li>Tender support</li>
+              <li>Detailed technical MEP designs, schedules &amp; specifications</li>
+              <li>BIM Level 2 coordination &amp; clash detection</li>
+              <li>Tender support &amp; reviews</li>
             </ul>
           </div>
         </div>
         <div class="riba-stage" tabindex="0">
-          <span class="dot">5</span><span class="name">Manufacturing &amp; Construction</span>
+          <span class="dot">5</span><span class="name">Installation</span>
           <div class="riba-pop">
-            <h4>Stage 5: Manufacturing &amp; Construction</h4>
+            <h4>Stage 5: Installation</h4>
             <ul>
               <li>Site inspections &amp; technical support</li>
               <li>Contractor submittal reviews</li>
-              <li>Change management</li>
+              <li>&lsquo;As-built&rsquo; drawings &amp; SBEM modelling</li>
             </ul>
           </div>
         </div>
@@ -205,9 +205,9 @@ import '../styles/home.css';
           <div class="riba-pop">
             <h4>Stage 7: Use</h4>
             <ul>
-              <li>Post-occupancy evaluation</li>
-              <li>Energy monitoring &amp; optimisation</li>
-              <li>Soft landings support</li>
+              <li>Seasonal commissioning reviews</li>
+              <li>End of defects liability checks</li>
+              <li>Soft landings initiation &amp; support</li>
             </ul>
           </div>
         </div>
@@ -215,26 +215,31 @@ import '../styles/home.css';
     </div>
   </section>
 
-  <!-- sectors: static list (sector pages on hold, items are non-links) -->
+  <!-- sectors: static list in three columns (sector pages on hold, items are non-links).
+       Markup is column-major; the grid flows by column so each column reads
+       light blue, pink, green, and a phone's single column keeps the same order. -->
   <section class="sectors-band" aria-label="Sectors we cover">
     <div class="wrap">
       <div class="lab rv">Sectors we cover</div>
       <ul class="sector-list rv rv-d1">
-        <li><span class="pip" style="background:var(--navy)"></span>Heritage</li>
-        <li><span class="pip" style="background:var(--magenta)"></span>Later Living &amp; Care</li>
-        <li><span class="pip" style="background:var(--blue)"></span>Residential</li>
-        <li><span class="pip" style="background:var(--lime)"></span>Studios &amp; Media</li>
-        <li><span class="pip" style="background:var(--navy)"></span>Education</li>
-        <li><span class="pip" style="background:var(--magenta)"></span>Life Sciences</li>
+        <li><span class="pip" style="background:var(--blue)"></span>Heritage</li>
+        <li><span class="pip" style="background:var(--magenta)"></span>Residential</li>
+        <li><span class="pip" style="background:var(--lime)"></span>Commercial</li>
+        <li><span class="pip" style="background:var(--blue)"></span>Industrial &amp; Logistics</li>
+        <li><span class="pip" style="background:var(--magenta)"></span>Retail, Leisure &amp; Hospitality</li>
+        <li><span class="pip" style="background:var(--lime)"></span>Education</li>
+        <li><span class="pip" style="background:var(--blue)"></span>Healthcare &amp; Life Sciences</li>
+        <li><span class="pip" style="background:var(--magenta)"></span>Defence</li>
+        <li><span class="pip" style="background:var(--lime)"></span>Energy &amp; Infrastructure</li>
       </ul>
     </div>
   </section>
 
-  <!-- featured projects carousel -->
+  <!-- featured projects carousel: order, copy and per-card accent from src/data/projects.js -->
   <section class="projects">
     <div class="head-row rv">
       <div>
-        <span class="kick">Proof, not promises</span>
+        <span class="kick kick-bare" aria-hidden="true"></span>
         <h2 class="disp">Featured projects</h2>
       </div>
       <div class="arrows">
@@ -243,112 +248,34 @@ import '../styles/home.css';
       </div>
     </div>
     <div class="slides" id="slides">
-      <a class="card rv" href="/projects/national-trust-carbon-impact-studies">
-        <div class="img">
-          <div class="fill" style="background-image:url('/assets/national-trust-photo.jpg')"></div>
-          <div class="capsules">
-            <span class="capsule">National Trust</span>
-            <span class="capsule alt">Heritage</span>
+      {projects.map((p, i) => (
+        <a class={'card rv' + (i < 4 && i > 0 ? ` rv-d${i}` : '')} href={`/projects/${p.slug}`} style={`--acc:${p.accent}`}>
+          <div class="img">
+            <div class="fill" style={`background-image:url('${p.img}')`}></div>
+            <div class="capsules">
+              <span class="capsule" set:html={p.capsule} />
+              <span class="capsule alt" set:html={p.tag} />
+            </div>
+            <div class="reveal">
+              <h3 set:html={p.title} />
+              <dl>
+                <div><dt>Client</dt><dd set:html={p.client} /></div>
+                <div><dt>Project</dt><dd set:html={p.project} /></div>
+                <div><dt>Sector</dt><dd set:html={p.sector} /></div>
+                {p.value && <div><dt>Value</dt><dd set:html={p.value} /></div>}
+                {p.scope && <div><dt>Scope</dt><dd set:html={p.scope} /></div>}
+                <div><dt>Key fact</dt><dd set:html={p.fact} /></div>
+              </dl>
+              <span class="more">View project <span class="arr">&rarr;</span></span>
+            </div>
           </div>
-          <div class="reveal">
-            <h3>Site-wide <span class="c-green">carbon</span> impact studies</h3>
-            <dl>
-              <div><dt>Client</dt><dd>National Trust</dd></div>
-              <div><dt>Project</dt><dd>Net zero <span class="c-green">carbon</span> masterplanning across the estate</dd></div>
-              <div><dt>Sector</dt><dd>Heritage</dd></div>
-              <div><dt>Scope</dt><dd>25+ sites studied UK-wide</dd></div>
-              <div><dt>Key fact</dt><dd>Supporting the Trust&rsquo;s 2030 net zero pledge</dd></div>
-            </dl>
-            <span class="more">View project <span class="arr">&rarr;</span></span>
-          </div>
-        </div>
-      </a>
-      <a class="card rv rv-d1" href="/projects/knowle-retirement-village">
-        <div class="img">
-          <div class="fill" style="background-image:url('/assets/knowle.jpg')"></div>
-          <div class="capsules">
-            <span class="capsule">Opus, Knowle</span>
-            <span class="capsule alt">Later Living</span>
-          </div>
-          <div class="reveal">
-            <h3>Knowle Retirement Village</h3>
-            <dl>
-              <div><dt>Client</dt><dd>Opus Villages</dd></div>
-              <div><dt>Project</dt><dd>New-build retirement village, concept to RIBA Stage 3</dd></div>
-              <div><dt>Sector</dt><dd>Later Living &amp; Care</dd></div>
-              <div><dt>Value</dt><dd>c. &pound;34.0m</dd></div>
-              <div><dt>Key fact</dt><dd>EPC A, net zero energy options appraised</dd></div>
-            </dl>
-            <span class="more">View project <span class="arr">&rarr;</span></span>
-          </div>
-        </div>
-      </a>
-      <a class="card rv rv-d2" href="/projects/shepperton-studios">
-        <div class="img">
-          <div class="fill" style="background-image:url('/assets/shepperton-internal.jpg')"></div>
-          <div class="capsules">
-            <span class="capsule">Shepperton Studios</span>
-            <span class="capsule alt">Studios &amp; Media</span>
-          </div>
-          <div class="reveal">
-            <h3>Shepperton Studios</h3>
-            <dl>
-              <div><dt>Client</dt><dd>Space Group</dd></div>
-              <div><dt>Project</dt><dd>Food and beverage fit-out across three buildings</dd></div>
-              <div><dt>Sector</dt><dd>Studios &amp; Media</dd></div>
-              <div><dt>Value</dt><dd>c. &pound;2.0m</dd></div>
-              <div><dt>Key fact</dt><dd>RIBA Stage 4 design, BIM Level 2 clash-free model</dd></div>
-            </dl>
-            <span class="more">View project <span class="arr">&rarr;</span></span>
-          </div>
-        </div>
-      </a>
-      <a class="card rv rv-d3" href="/projects/the-lampworks">
-        <div class="img">
-          <div class="fill" style="background-image:url('/assets/lampworks-cgi.png')"></div>
-          <div class="capsules">
-            <span class="capsule">The Lampworks</span>
-            <span class="capsule alt">Residential</span>
-          </div>
-          <div class="reveal">
-            <h3>The Lampworks</h3>
-            <dl>
-              <div><dt>Client</dt><dd>Regal ME / Build Fifty5</dd></div>
-              <div><dt>Project</dt><dd>148 build-to-rent apartments across five blocks</dd></div>
-              <div><dt>Sector</dt><dd>Residential</dd></div>
-              <div><dt>Value</dt><dd>c. &pound;23.0m</dd></div>
-              <div><dt>Key fact</dt><dd>RIBA Stage 4C construction issue, BIM Level 2</dd></div>
-            </dl>
-            <span class="more">View project <span class="arr">&rarr;</span></span>
-          </div>
-        </div>
-      </a>
+        </a>
+      ))}
     </div>
   </section>
 
-  <!-- testimonials: short, staggered; full quotes live on the project pages -->
-  <section class="social">
-    <div class="wrap">
-      <div class="sec-head rv">
-        <span class="kick">What our clients say</span>
-        <h2 class="disp">In their words</h2>
-      </div>
-      <div class="quotes">
-        <a class="quote rv" href="/projects/shepperton-studios">
-          <div class="q">&ldquo;Rubix were excellent and are now our go-to MEP designers.&rdquo;</div>
-          <div class="by"><b>Chris Lee</b>, Space Group</div>
-        </a>
-        <a class="quote rv rv-d1 offset" href="/projects/knowle-retirement-village">
-          <div class="q">&ldquo;A highly proactive consultancy. They have worked extremely well for us against tight deadlines and kept us well informed at all stages.&rdquo;</div>
-          <div class="by"><b>Patrick Egan</b>, Opus Villages</div>
-        </a>
-        <a class="quote rv rv-d2" href="/projects/national-trust-carbon-impact-studies">
-          <div class="q">&ldquo;Thorough, detailed, prompt and at all times highly professional.&rdquo;</div>
-          <div class="by"><b>Matthew Knowles</b>, National Trust</div>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- Testimonials section removed at the client's request (01.10 review) until
+       there are enough current testimonials to show. -->
 
   <script is:inline type="application/ld+json">
     {

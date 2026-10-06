@@ -81,7 +81,7 @@
           cx = box.left + box.width / 2, cy = box.top + box.height / 2,
           ox = vw / 2 - cx, oy = vh / 2 - cy,
           rx = Math.max(120, vw / 2 - 90), ry = Math.max(100, vh / 2 - 80),
-          total = 4300, done = 0;
+          total = 5600, done = 0;   /* a little longer so the opening reads as the site loading */
       shapes.forEach(function (sv, i) {
         var r = sv.getBoundingClientRect(),
             hx = r.left + r.width / 2 - cx, hy = r.top + r.height / 2 - cy,

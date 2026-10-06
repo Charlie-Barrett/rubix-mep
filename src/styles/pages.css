@@ -17,6 +17,9 @@
 .page-hero.magenta .bg::after{ background:linear-gradient(100deg, rgba(32,47,88,.96) 0%, rgba(112,17,74,.72) 60%, rgba(204,19,131,.42) 100%); }
 
 .ndash{ width:56px; height:5px; background:var(--lime); border-radius:3px; margin-bottom:20px; }
+.ndash.navy{ background:var(--navy); }
+/* Projects index runs wider than the 1220px content column (01.10 review). */
+.wrap.wide{ max-width:1440px; }
 .sec-pad{ padding:84px 0; }
 .sec-pad.soft{ background:var(--bg-soft); }
 .shead2{ max-width:720px; }
@@ -34,10 +37,11 @@
 .pcard .shade{ position:absolute; inset:0;
   background:linear-gradient(180deg, rgba(32,47,88,.18) 0%, rgba(32,47,88,.05) 40%, rgba(32,47,88,.72) 100%); }
 .pcard .capsules{ position:absolute; top:24px; left:24px; display:flex; flex-wrap:wrap; gap:8px; }
-.pcard .capsule{ background:#fff; color:var(--navy); font-size:12.5px; font-weight:700;
+.pcard .capsule{ background:#fff; color:var(--acc,var(--navy)); font-size:12.5px; font-weight:700;
   padding:7px 13px; border-radius:999px; }
 .pcard .capsule.alt{ background:rgba(32,47,88,.78); color:#fff; }
-.pcard .more{ position:absolute; left:24px; bottom:20px; color:#fff; font-weight:700; font-size:14px; }
+.pcard .more{ position:absolute; left:24px; bottom:20px; color:#fff; font-weight:700; font-size:14px; transition:color .2s ease; }
+.pcard:hover .more{ color:var(--acc,#fff); }
 .pcard .more .arr{ display:inline-block; transition:transform .25s ease; }
 .pcard:hover .more .arr{ transform:translateX(5px); }
 .pcard.logo-card .fill{ background-size:min(60%,320px); background-repeat:no-repeat; background-color:#fff; }

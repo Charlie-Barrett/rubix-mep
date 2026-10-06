@@ -1,0 +1,52 @@
+---
+import CaseStudy from '../../layouts/CaseStudy.astro';
+// Copy from the client's 01.10 review notes and the 'Potential Future Projects'
+// brochure page. Construction value and the RIBA scope of appointment are not stated
+// in either source, so the glance bar and scope describe the development itself.
+---
+<CaseStudy
+  metaTitle="Curborough Craft Centre | Mixed-use & Retail MEP Case Study | Rubix MEP"
+  metaDesc="Case study: Curborough Craft Centre, a mixed-use farm diversification project in Lichfield for McPhillips and Pegasus Group: six large-scale retail units, a cookery school, children's nursery and garden centre."
+  name="Curborough Craft Centre"
+  heroImage="/assets/curborough-cgi.jpg"
+  capsules={[
+    { text: 'Mixed-use &amp; Retail' },
+    { text: 'Lichfield', alt: true },
+    { text: 'McPhillips / Pegasus Group', alt: true }
+  ]}
+  lede="A mixed-use farm diversification project at the existing Curborough Hall Farm Countryside Centre in Lichfield: six large-scale retail units, a cookery school, a children&rsquo;s nursery and a garden centre, more than doubling the size of the existing centre."
+  glance={[
+    { n: 'McPhillips', l: 'Client &middot; with Pegasus Group' },
+    { n: 'Lichfield', l: 'Curborough Hall Farm' },
+    { n: '6', l: 'Large-scale retail units' },
+    { n: 'Nursery', l: '+ cookery school &amp; garden centre' },
+    { n: '2x', l: 'Existing centre more than doubled' }
+  ]}
+  overview={[
+    'A new <b>mixed-use development at the existing Curborough Hall Farm Countryside Centre</b> in Lichfield, comprising multiple retail units, a cookery school, children&rsquo;s nursery and garden centre.',
+    'The farm diversification project comprises the construction of <b>six large-scale retail units, a children&rsquo;s nursery and a garden centre</b>, set around a landscaped courtyard.',
+    'It is a <b>major development that will see the existing Farm, Countryside and Garden Centre more than double in size</b>.'
+  ]}
+  images={[
+    { src: '/assets/curborough-cgi.jpg', alt: 'CGI of Curborough Craft Centre: timber-clad retail units with a nursery and seating around a landscaped courtyard' },
+    { src: '/assets/curborough-cookery-cgi.jpg', alt: 'CGI of the Farmers Table cookery school frontage at Curborough Craft Centre' }
+  ]}
+  scope={[
+    { h: 'Retail units', p: 'Building services for six large-scale retail units, each with its own servicing needs within one coordinated site infrastructure.' },
+    { h: 'Nursery &amp; cookery school', p: 'MEP design for a children&rsquo;s nursery and a cookery school, where ventilation, catering services and comfort set the brief.' },
+    { h: 'Garden centre &amp; site', p: 'A new garden centre and the site-wide infrastructure needed to more than double the existing countryside centre.' }
+  ]}
+  chipsLabel="Project team"
+  chips={['McPhillips', 'Pegasus Group']}
+  ctaSub="Mixed-use, retail or leisure. Start the conversation."
+  relatedServices={[
+    { label: 'Mechanical design', href: '/services#mechanical' },
+    { label: 'Electrical design', href: '/services#electrical' },
+    { label: 'Public health design', href: '/services#public-health' }
+  ]}
+  otherProjects={[
+    { label: 'Shepperton Studios', href: '/projects/shepperton-studios' },
+    { label: 'Batsford Arboretum', href: '/projects/batsford-arboretum' },
+    { label: 'Corner House, Port Loop', href: '/projects/corner-house-port-loop' }
+  ]}
+/>
