@@ -51,9 +51,9 @@ export const projects = [
     img: '/assets/curborough-cgi.jpg', alt: 'CGI of Curborough Craft Centre: timber-clad retail units around a landscaped courtyard',
     capsule: 'McPhillips', tag: 'Mixed-use &amp; Retail', title: 'Curborough Craft Centre',
     client: 'McPhillips',
-    project: 'Mixed-use farm diversification project in Lichfield: six large-scale retail units, a children&rsquo;s nursery and garden centre',
+    project: 'Mixed-use farm diversification project in Lichfield comprising the construction of 6 large-scale retail units, a children&rsquo;s nursery and garden centre',
     sector: 'Mixed-use &amp; Retail',
-    fact: 'The existing Farm, Countryside and Garden Centre will more than double in size',
+    fact: 'Major development that will see the existing Farm, Countryside and Garden Centre over double in size',
     indexTag: 'Mixed-use &amp; Retail'
   },
   {
@@ -82,9 +82,9 @@ export const projects = [
     capsule: 'National Trust', tag: 'Heritage', title: 'Tyntesfield Cow Barn',
     client: 'National Trust',
     project: 'Refurbishment of the Grade II listed Cow Barn cafe and shop, Wraxall',
-    sector: 'Heritage', value: '&pound;2.0m',
+    sector: 'Heritage', value: '&pound;1.0m',
     fact: 'RIBA Stage 4 MEP design within a Victorian farm building',
-    indexTag: '&pound;2m &middot; Heritage'
+    indexTag: '&pound;1m &middot; Heritage'
   },
   {
     slug: 'corner-house-port-loop', accent: GREEN,

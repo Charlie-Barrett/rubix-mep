@@ -85,7 +85,7 @@ a.dcard .big:hover, .dcard a.big:hover{ color:var(--blue); }
 .tcard h3{ font-size:18px; color:var(--navy); text-transform:uppercase; letter-spacing:.03em;
   margin-bottom:9px; }
 .tcard p{ font-size:14.5px; color:var(--grey); line-height:1.7; }
-@media (max-width:1024px){ .dgrid{ grid-template-columns:1fr; } }
+@media (max-width:1024px){ .dgrid{ grid-template-columns:1fr; } .tgrid{ grid-template-columns:1fr; } }
 @media (max-width:760px){.wrap{ padding:0 22px; }
 .dirs{ grid-template-columns:1fr; }
 .mapframe{ padding:0 22px; }

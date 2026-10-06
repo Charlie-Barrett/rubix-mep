@@ -183,3 +183,5 @@ a{ color:inherit; }
   .tgrid{ grid-template-columns:1fr; }
   .foot .top{ grid-template-columns:1fr 1fr; }
 }
+/* Phones: the header CTA lives in the side menu; the bar keeps only the logo and burger. */
+@media (max-width:760px){ .hdr-right .btn{ display:none; } .menu .menu-cta .btn{ display:inline-flex; } }
