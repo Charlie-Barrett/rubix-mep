@@ -8,9 +8,12 @@ import { projects } from '../data/projects.js';
   description="Delivering low-carbon, innovative building services design solutions, tailored to your needs. MEP consultants, RIBA Stages 0 to 7, Birmingham and UK-wide."
   headerVariant="home"
 >
-  <!-- Migrating logo lock-up: on load the ident shapes burst out, sweep the hero and
-       return into the mark (ported from the holding page); it then docks top-left on scroll.
-       Geometry is driven by --ident and assumes the full-canvas 2875x1009 lock-up artwork. -->
+  <!-- Loading screen (client, 01.10 review; SBK reference): a navy overlay covers the page
+       while the ident shapes burst out of the mark and return into it; the overlay then lifts
+       and the logo glides to its docked position top-left. Plays in full once per browser
+       session, resolves quickly on later visits, and is skipped for reduced-motion users.
+       Clicking the docked logo at the top of the page replays it. See public/js/home.js. -->
+  <div class="preloader" id="preloader" aria-hidden="true"><div class="bg"></div></div>
   <a class="hero-logo" id="heroLogo" href="/" aria-label="Rubix MEP, home" style="--dock:0">
     <span class="lockup" id="lockup">
       <span class="ident" id="ident" aria-hidden="true">
@@ -29,9 +32,16 @@ import { projects } from '../data/projects.js';
     </span>
   </a>
 
-  <!-- brand hero: the logo is the page on first view -->
-  <section class="brand-hero" id="brandHero">
-    <div class="bg" aria-hidden="true"></div>
+  <!-- intro -->
+  <section class="intro">
+    <div class="bg" role="img" aria-label="City skyline blended with forest treeline in Rubix navy duotone"></div>
+    <div class="wrap">
+      <h1 class="disp rv">Delivering low-<span class="c-green">carbon</span>, <span class="c-pink">innovative</span> building services design solutions, <span class="c-blue">tailored to your needs.</span></h1>
+      <div class="ctas rv rv-d1">
+        <a href="#enquire" class="btn btn-white">Discuss your project <span class="arr">&rarr;</span></a>
+        <a href="/capabilities" class="btn btn-ghost">See our capabilities</a>
+      </div>
+    </div>
   </section>
 
   <!-- rolling clients banner -->
@@ -63,18 +73,6 @@ import { projects } from '../data/projects.js';
         <img src="/assets/client-elevate-property.png" alt="Elevate Property Group" />
         <img src="/assets/client-cadence-projects.png" alt="Cadence Projects" />
         <img src="/assets/client-sunrise-facilities.png" alt="Sunrise Facilities Management" />
-      </div>
-    </div>
-  </section>
-
-  <!-- intro -->
-  <section class="intro">
-    <div class="bg" role="img" aria-label="City skyline blended with forest treeline in Rubix navy duotone"></div>
-    <div class="wrap">
-      <h1 class="disp rv">Delivering low-<span class="c-green">carbon</span>, <span class="c-pink">innovative</span> building services design solutions, <span class="c-blue">tailored to your needs.</span></h1>
-      <div class="ctas rv rv-d1">
-        <a href="#enquire" class="btn btn-white">Discuss your project <span class="arr">&rarr;</span></a>
-        <a href="/capabilities" class="btn btn-ghost">See our capabilities</a>
       </div>
     </div>
   </section>

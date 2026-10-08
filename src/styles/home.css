@@ -6,17 +6,17 @@
 .rv-d4{ transition-delay:.32s; }
 .header .wrap{ display:flex; align-items:center; justify-content:flex-end;
   max-width:none; padding-top:26px; padding-bottom:18px; }
-/* Opening graphic fills the screen and runs a little longer so it reads as the site
-   loading (client, 01.10 review; SBK reference). */
-.brand-hero{ position:relative; background:var(--navy); color:#fff; overflow:hidden;
-  min-height:100vh; min-height:100svh; display:flex; align-items:center; justify-content:center; }
-.brand-hero .bg{ position:absolute; inset:0;
-  background:var(--hero-img) center 30%/cover no-repeat; opacity:.35; }
-.brand-hero .bg::after{ content:""; position:absolute; inset:0;
+.preloader{ position:fixed; inset:0; z-index:54; background:var(--navy); overflow:hidden;
+  transition:opacity .7s ease, visibility .7s ease; }
+.preloader .bg{ position:absolute; inset:0; background:var(--hero-img) center 30%/cover no-repeat; opacity:.35; }
+.preloader .bg::after{ content:""; position:absolute; inset:0;
   background:radial-gradient(ellipse at center, rgba(32,47,88,.15) 0%, rgba(32,47,88,.85) 100%); }
+.preloader.done{ opacity:0; visibility:hidden; }
+html.preloading{ overflow:hidden; }
 .hero-logo{ position:fixed; top:0; left:0; z-index:55; display:block;
   transform-origin:top left; will-change:transform; padding:10px 14px; border-radius:6px;
-  background:rgba(32,47,88,var(--dock,0)); }
+  background:rgba(32,47,88,var(--dock,0)); transition:background .5s ease; }
+.hero-logo.docking{ transition:transform .95s cubic-bezier(.2,.8,.2,1), background .5s ease .3s; }
 /* Lock-up geometry: everything is sized from --ident so the animated shapes register
    exactly over the ident on the full-canvas 2875x1009 artwork. */
 .lockup{ position:relative; display:block;
@@ -57,7 +57,7 @@
   background:var(--hero-img) center 55%/cover no-repeat; }
 .intro .bg::after{ content:""; position:absolute; inset:0;
   background:linear-gradient(100deg, rgba(32,47,88,.96) 0%, rgba(32,47,88,.86) 38%, rgba(32,47,88,.5) 100%); }
-.intro .wrap{ position:relative; z-index:2; padding-top:100px; padding-bottom:100px; }
+.intro .wrap{ position:relative; z-index:2; padding-top:160px; padding-bottom:110px; }
 .intro h1{ font-size:clamp(34px,4.4vw,58px); font-weight:800; max-width:860px; margin-bottom:22px; }
 .intro h1 .hl{ color:var(--lime); }
 .intro p.lede{ font-size:19px; line-height:1.6; color:#C6D0DC; max-width:560px; margin-bottom:38px; }
@@ -244,7 +244,6 @@
   .wrap{ padding:0 22px; }
   .hdr-right .btn{ display:none; }
   .menu .menu-cta .btn{ display:inline-flex; }
-  .brand-hero{ min-height:100vh; min-height:100svh; }
   .pillars{ grid-template-columns:1fr; }
   .pillar .ico{ height:100px; }
   .projects .head-row{ padding:70px 22px 36px; }
