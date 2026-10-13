@@ -236,7 +236,7 @@
 .dcard{ --acc:var(--lime); display:flex; flex-direction:column; background:var(--navy-2); border-radius:8px;
   overflow:hidden; border:1px solid rgba(255,255,255,.14); }
 .dcard .ph{ aspect-ratio:1; overflow:hidden; background:var(--navy-2); }
-.dcard .ph img{ width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;
+.dcard .ph img{ width:100%; height:100%; object-fit:cover; object-position:center 40%; display:block;
   filter:grayscale(1); transition:filter .25s ease, transform .35s ease; }
 .dcard:hover .ph img{ filter:none; transform:scale(1.04); }
 .dcard .body{ padding:24px 24px 26px; display:flex; flex-direction:column; flex:1; }

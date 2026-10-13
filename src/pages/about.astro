@@ -8,34 +8,34 @@ import Skyline from '../components/Skyline.astro';
 // accent colour (Alec green, Stuart light blue, Dan pink) for the role and bullets.
 const directors = [
   {
-    name: 'Alec Mabbott', img: '/assets/alec.webp', accent: 'var(--lime)',
+    name: 'Alec Mabbott', img: '/assets/alec-v2.webp', accent: 'var(--lime)',
     bio: 'As a CIBSE Chartered Engineer (CEng MCIBSE) with a mechanical engineering bias and over 15 years&rsquo; experience, Alec has delivered small to large-scale projects with complex MEP requirements across a range of sectors. He regularly fulfils a client-facing role and leads multi-disciplinary design teams to project success, combining practical engineering design with expertise in Revit 3D modelling, BIM coordination and <span class="c-green">carbon</span> impact studies.',
     points: ['Multi-sector expertise', 'Sustainability &amp; <span class="c-green">Carbon</span> Impact Studies Lead', 'Building Information Modelling (BIM) Lead']
   },
   {
-    name: 'Stuart Growcott', img: '/assets/stuart.webp', accent: 'var(--blue)',
+    name: 'Stuart Growcott', img: '/assets/stuart-v2.webp', accent: 'var(--blue)',
     bio: 'Stuart has 30 years of experience across the construction industry, with a proven track record managing multi-discipline teams to deliver innovative building services project solutions. His approach has benefited from having worked for both Contractors and Consultancy practices, gaining a comprehensive understanding of building services solutions to meet environmental, economic, and social responsibilities whilst adopting pragmatic and holistic design methods.',
     points: ['30+ years&rsquo; experience', 'Expertise in Healthcare &amp; Later Living', 'Experience in both contracting &amp; consultancy']
   },
   {
-    name: 'Daniel Williams', img: '/assets/daniel.webp', accent: 'var(--magenta)',
+    name: 'Daniel Williams', img: '/assets/daniel-v2.webp', accent: 'var(--magenta)',
     bio: 'As a Chartered Electrical Engineer (BEng (Hons), CEng, MIET) with over 20 years&rsquo; experience, Daniel combines hands-on installation knowledge with technical design expertise, having started his career carrying out electrical installations on site. He has led teams on numerous successful projects across a variety of sectors and delivered MEP engineering design for projects ranging from concept through to detailed design and installation. Daniel has extensive experience in both new-build and refurbishment schemes, including heritage and historic buildings.',
     points: ['Electrical Lead', '20+ years&rsquo; experience', 'Multi-sector expertise']
   }
 ];
 
-// Wider team. `z` zooms a headshot in (and `oy` raises the crop) where the client
-// asked for a tighter torso-and-head framing to match the others. All headshots are
-// due to be reshot on 19 October; Sarah's photo is still to come.
+// Wider team. All headshots (team and directors) are pre-cropped squares with the
+// eye line 40% from the top and the same eye spacing, so heads sit level and at the
+// same size without CSS zooming (13 Oct). Re-crop the 19 October reshoot the same way.
 const team = [
-  { img: '/assets/staff-tm.jpg', z: 1.3, oy: '45%', ty: '-15%' },
-  { img: '/assets/staff-ww.jpg', z: 1.1, oy: '38%', ty: '-6%' },
-  { img: '/assets/staff-fs.jpg', z: 1.3, oy: '48%', ty: '-17%' },
-  { img: '/assets/staff-ab.jpg' },
-  { img: '/assets/staff-ak.jpg', z: 1.4, oy: '45%', ty: '-15%' },
-  { img: '/assets/staff-db.jpg', z: 1.25, oy: '33%', ty: '-5%' },
-  { img: '/assets/staff-as.jpg' },
-  { img: '/assets/staff-ld.jpg', z: 1.3, oy: '42%', ty: '-12%' }
+  { img: '/assets/staff-tm-v2.jpg' },
+  { img: '/assets/staff-ww-v2.jpg' },
+  { img: '/assets/staff-fs-v2.jpg' },
+  { img: '/assets/staff-ab-v2.jpg' },
+  { img: '/assets/staff-ak-v2.jpg' },
+  { img: '/assets/staff-db-v2.jpg' },
+  { img: '/assets/staff-as-v2.jpg' },
+  { img: '/assets/staff-ld-v2.jpg' }
 ];
 ---
 <BaseLayout
