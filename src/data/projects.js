@@ -111,7 +111,7 @@ export const projects = [
   },
   {
     slug: 'calke-abbey-hub-kitchen', accent: PINK, pos: 'center 60%',
-    img: '/assets/calke-abbey-hub-kitchen.jpg', alt: 'The new timber-clad Hub Kitchen at Calke Abbey with roof-mounted solar PV',
+    img: '/assets/calke-abbey-hub-kitchen-v2.jpg', alt: 'The new timber-clad Hub Kitchen at Calke Abbey with roof-mounted solar PV',
     capsule: 'National Trust', tag: 'Heritage', title: 'Calke Abbey Hub Kitchen',
     client: 'The National Trust',
     project: 'New-build Hub Kitchen, BBQ kiosk and refurbishment works at Calke Abbey, Derbyshire',
