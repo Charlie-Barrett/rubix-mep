@@ -36,7 +36,7 @@ import { projects } from '../data/projects.js';
   <section class="intro">
     <div class="bg" role="img" aria-label="City skyline blended with forest treeline in Rubix navy duotone"></div>
     <div class="wrap">
-      <h1 class="disp rv">Delivering low-<span class="c-green">carbon</span>, <span class="c-pink">innovative</span> building services design solutions, <span class="c-blue">tailored to your needs.</span></h1>
+      <h1 class="disp rv">Delivering <span class="c-green">low-carbon</span>, <span class="c-pink">innovative</span> building services design solutions, <span class="c-blue">tailored to your needs.</span></h1>
       <div class="ctas rv rv-d1">
         <a href="#enquire" class="btn btn-white">Discuss your project <span class="arr">&rarr;</span></a>
         <a href="/capabilities" class="btn btn-ghost">See our capabilities</a>
@@ -139,7 +139,7 @@ import { projects } from '../data/projects.js';
             <ul>
               <li>Technical due diligence &amp; feasibility</li>
               <li>MEP condition and capacity surveys</li>
-              <li>Low-<span class="c-green">carbon</span> options appraisals</li>
+              <li><span class="c-green">Low-carbon</span> options appraisals</li>
             </ul>
           </div>
         </div>
@@ -249,7 +249,7 @@ import { projects } from '../data/projects.js';
       {projects.map((p, i) => (
         <a class={'card rv' + (i < 4 && i > 0 ? ` rv-d${i}` : '')} href={`/projects/${p.slug}`} style={`--acc:${p.accent}`}>
           <div class="img">
-            <div class="fill" style={`background-image:url('${p.img}')`}></div>
+            <div class={'fill' + (p.fit === 'contain' ? ' contain' : '')} style={`background-image:url('${p.img}')` + (p.pos ? `;background-position:${p.pos}` : '')}></div>
             <div class="capsules">
               <span class="capsule" set:html={p.capsule} />
               <span class="capsule alt" set:html={p.tag} />

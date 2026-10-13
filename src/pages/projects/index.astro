@@ -28,7 +28,7 @@ const cards = [...projects, ...indexExtra];
       <div class="pgrid">
         {cards.map((p, i) => (
           <a class={'pcard rv' + (i % 2 === 1 ? ' rv-d1' : '')} href={`/projects/${p.slug}`} aria-label={p.alt} style={`--acc:${p.accent}`}>
-            <div class="fill" style={`background-image:url('${p.img}')`}></div>
+            <div class={'fill' + (p.fit === 'contain' ? ' contain' : '')} style={`background-image:url('${p.img}')` + (p.pos ? `;background-position:${p.pos}` : '')}></div>
             <div class="shade"></div>
             <div class="capsules">
               <span class="capsule" set:html={p.capsule} />

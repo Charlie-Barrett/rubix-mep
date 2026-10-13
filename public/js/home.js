@@ -160,7 +160,8 @@
         idx = 0;
     var padLeft = function () { return parseFloat(getComputedStyle(slides).paddingLeft) || 0; };
     var go = function (i) {
-      idx = Math.min(Math.max(i, 0), items.length - 1);
+      /* 13.10 review: wrap at either end rather than stopping on the last card */
+      idx = (i + items.length) % items.length;
       slides.scrollTo({ left: items[idx].offsetLeft - padLeft(), behavior: reduced ? 'auto' : 'smooth' });
     };
     document.getElementById('prevBtn').addEventListener('click', function () { go(idx - 1); });

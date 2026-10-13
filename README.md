@@ -36,7 +36,7 @@ npm run build    # static output in dist/
 ## Standing brand rules (enforced, keep it that way)
 
 - No em dashes anywhere in copy.
-- The word "carbon" is always Rubix green (`.c-green` span); inherits on green surfaces. Page `<title>`/meta are exempt (unstylable).
+- The word "carbon" is always Rubix green (`.c-green` span); "low-carbon" is green as a whole phrase (13.10). Inherits on green surfaces. Page `<title>`/meta are exempt (unstylable).
 - Footer logo is the white-square Rubix mark without "MEP" (`assets/logo-footer.png`).
 - Sectors section is ON HOLD: no `/sectors` links anywhere; sector names appear as non-linked text.
 
@@ -45,6 +45,12 @@ npm run build    # static output in dist/
 Applied: navy-first palette with magenta and lime demoted to text accents; all inner-page banners on the homepage navy duotone; header CTA transparent with white outline; menu is a right-hand side panel; white-wordmark-on-white-tile logo on dark banners (`logo-white-tile-mep.png`), blue version for light pages, navy tile fades in behind the docked homepage logo; enquiry form (first name, last name, company, email) replaces the old CTA band on every page (`Cta.astro`); "Sustainability" renamed Building Physics (pillar, services block moved under the three discipline cards, footer); homepage differentiator is Building Physics with the "How it works" button removed; client band white with blue label; sectors as a static two-column list; featured project cards larger with a hover reveal (client, project, sector, value, key fact); testimonials as three short staggered quotes linking to project pages; About fully navy with white outlines, leadership photo and careers photo removed, directors as a hover row, Vision above the team, team 4-wide, top "Join us" pill removed, "chartered" removed from copy; Contact white with the full address (Unit 612/13B), mobiles removed, map embedded by address (no "JQ Modern" label), separate careers form.
 
 Forms: interim only. `public/js/site.js` shows the thank-you state client-side and sends nothing until the HubSpot account exists; swap in the HubSpot embed or Forms API post and keep the markup.
+
+## 13 Oct 2026 review round (Alec walkthrough, recorded in Notion)
+
+Applied: project images no longer hard-cropped to 16:10. Near-square and portrait images (`fit: 'contain'` in `src/data/projects.js`: Lampworks, Melrose, Corner House, King's Hill, Calke Abbey, Batsford) show the whole image over a blurred fill of itself, so nothing is zoomed in and Batsford's wavy roof is visible; Chelmsford stays a cover crop anchored to the bottom (`pos`) so the care home, not the trees, fills the frame. Capsules on the homepage carousel and the projects grid are now white with the accent-colour outline and text (pink was unreadable on navy); the sector capsule is white with navy. Lampworks capsule reads "Regal ME" (capsule = client, not project). Homepage carousel wraps at both ends. "Low-carbon" is now green as a whole phrase (`<span class="c-green">low-carbon</span>`), extending the carbon-green rule: carbon is bad, low carbon is good.
+
+Curborough now uses the two full-width architect CGIs (courtyard = card image, Farmers Table street = second image) and Tyntesfield uses Charlie's own 4:3 exterior photo (converted from HEIC, 2000px); both back to a normal crop. Still waiting on from Rubix: the two carbon impact study visuals for Services, Adam's colour headshot (SharePoint staff photos, "AB"), Sarah's photo, HubSpot form embed codes. Team page tweaks (Stuart up, Dave down, Winnie zoom, names-on-image hover) not yet done. Calke Abbey source image is itself a close crop of the roof; a wider shot is needed to show the building.
 
 ## Known gaps / decisions to revisit
 

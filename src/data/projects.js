@@ -3,13 +3,17 @@
 // list, applied to the capsule, the field labels and the "View project" link.
 // Copy comes from the capabilities brochure and the client's review notes; the
 // word "carbon" is wrapped in .c-green per the brand rule.
+// fit: 'contain' (13.10 review) shows the whole image inside the 16:10 frame over a blurred
+// fill of itself, instead of a cover crop that left near-square and portrait images looking
+// zoomed in. pos: overrides the crop anchor for cover images (Chelmsford sits bottom-anchored so
+// the care home, not the trees, fills the frame). Capsule = client name (Lampworks shows Regal ME), not the project name.
 const BLUE = 'var(--blue)', PINK = 'var(--magenta)', GREEN = 'var(--lime)';
 
 export const projects = [
   {
-    slug: 'the-lampworks', accent: BLUE,
+    slug: 'the-lampworks', accent: BLUE, fit: 'contain',
     img: '/assets/lampworks-cgi.png', alt: 'The Lampworks build-to-rent development',
-    capsule: 'The Lampworks', tag: 'Residential', title: 'The Lampworks',
+    capsule: 'Regal ME', tag: 'Residential', title: 'The Lampworks',
     client: 'Regal ME / Build Fifty5',
     project: '148 build-to-rent apartments across five blocks',
     sector: 'Residential', value: 'c. &pound;23.0m',
@@ -17,7 +21,7 @@ export const projects = [
     indexTag: '&pound;23m &middot; Residential'
   },
   {
-    slug: 'chelmsford-care-home', accent: PINK,
+    slug: 'chelmsford-care-home', accent: PINK, pos: 'center 100%',
     img: '/assets/chelmsford-care-home-cgi.jpg', alt: 'CGI of the new 60-bed care home at Chelmsford for Lovett Care',
     capsule: 'Lovett Care', tag: 'Later Living &amp; Care', title: 'Chelmsford Care Home',
     client: 'Lovett Care',
@@ -57,7 +61,7 @@ export const projects = [
     indexTag: 'Mixed-use &amp; Retail'
   },
   {
-    slug: 'melrose-grange', accent: GREEN,
+    slug: 'melrose-grange', accent: GREEN, fit: 'contain',
     img: '/assets/melrose-grange-cgi.jpg', alt: 'CGI of Melrose Grange care home, St Mellons, Cardiff',
     capsule: 'Hallmark', tag: 'Later Living &amp; Care', title: 'Melrose Grange, Cardiff',
     client: 'Hallmark Luxury Care Homes',
@@ -77,7 +81,7 @@ export const projects = [
     indexTag: '&pound;2m &middot; Retail &amp; Hospitality'
   },
   {
-    slug: 'tyntesfield-cow-barn', accent: PINK,
+    slug: 'tyntesfield-cow-barn', accent: PINK, pos: 'center 40%',
     img: '/assets/tyntesfield-cow-barn.jpg', alt: 'The Cow Barn cafe at National Trust Tyntesfield',
     capsule: 'National Trust', tag: 'Heritage', title: 'Tyntesfield Cow Barn',
     client: 'National Trust',
@@ -87,7 +91,7 @@ export const projects = [
     indexTag: '&pound;1m &middot; Heritage'
   },
   {
-    slug: 'corner-house-port-loop', accent: GREEN,
+    slug: 'corner-house-port-loop', accent: GREEN, fit: 'contain',
     img: '/assets/corner-house-port-loop-cgi.jpg', alt: 'CGI of Corner House 1 at Icknield Port Loop, Birmingham',
     capsule: 'Urban Splash', tag: 'Residential', title: 'Corner House, Port Loop',
     client: 'Urban Splash / Create.iF',
@@ -97,7 +101,7 @@ export const projects = [
     indexTag: '&pound;15m &middot; Residential'
   },
   {
-    slug: 'kings-hill-care-home', accent: BLUE,
+    slug: 'kings-hill-care-home', accent: BLUE, fit: 'contain',
     img: '/assets/kings-hill-cgi.jpg', alt: 'CGI of the new 78-bed care home at King’s Hill for Lovett Care',
     capsule: 'Lovett Care', tag: 'Later Living &amp; Care', title: 'King&rsquo;s Hill Care Home',
     client: 'Lovett Care',
@@ -107,7 +111,7 @@ export const projects = [
     indexTag: '&pound;11m &middot; Later Living &amp; Care'
   },
   {
-    slug: 'calke-abbey-hub-kitchen', accent: PINK,
+    slug: 'calke-abbey-hub-kitchen', accent: PINK, fit: 'contain',
     img: '/assets/calke-abbey-hub-kitchen.jpg', alt: 'The new timber-clad Hub Kitchen at Calke Abbey with roof-mounted solar PV',
     capsule: 'National Trust', tag: 'Heritage', title: 'Calke Abbey Hub Kitchen',
     client: 'The National Trust',
@@ -121,7 +125,7 @@ export const projects = [
 // Projects index only: Batsford sits after the eleven featured projects.
 export const indexExtra = [
   {
-    slug: 'batsford-arboretum', accent: GREEN,
+    slug: 'batsford-arboretum', accent: GREEN, fit: 'contain',
     img: '/assets/batsford-arboretum.jpg', alt: 'Batsford Arboretum visitor building extension',
     capsule: 'Batsford Arboretum', indexTag: '&pound;2m &middot; Heritage'
   }

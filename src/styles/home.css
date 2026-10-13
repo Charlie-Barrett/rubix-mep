@@ -172,6 +172,12 @@ html.preloading{ overflow:hidden; }
 .card .img .fill{ position:absolute; inset:0; background-position:center; background-size:cover;
   transition:transform .5s ease; }
 .card:hover .img .fill{ transform:scale(1.045); }
+/* 13.10 review: whole image visible, blurred self-fill behind (no cover crop) */
+.fill.contain{ background-size:0 0; background-color:var(--navy-2); }
+.fill.contain::before, .fill.contain::after{ content:""; position:absolute; background-image:inherit;
+  background-repeat:no-repeat; background-position:center; }
+.fill.contain::before{ inset:-24px; background-size:cover; filter:blur(22px) brightness(.72) saturate(.9); }
+.fill.contain::after{ inset:0; background-size:contain; }
 .card .img::after{ content:""; position:absolute; inset:0;
   background:linear-gradient(to top, rgba(32,47,88,.55) 0%, rgba(32,47,88,0) 42%); transition:opacity .3s ease; }
 .card:hover .img::after, .card:focus-visible .img::after{ opacity:0; }
@@ -187,11 +193,11 @@ html.preloading{ overflow:hidden; }
 .card .reveal dd{ font-size:14px; line-height:1.45; color:#fff; margin:0; }
 .card .reveal .more{ position:static; }
 .card .capsules{ position:absolute; top:30px; left:30px; z-index:2; display:flex; gap:8px; flex-wrap:wrap; }
-.capsule{ display:inline-flex; align-items:center; background:rgba(32,47,88,.72);
-  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-  border:1px solid var(--acc,var(--lime)); border-radius:100px; padding:8px 16px;
-  color:var(--acc,var(--lime)); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
-.capsule.alt{ border-color:rgba(255,255,255,.35); color:#fff; }
+.capsule{ display:inline-flex; align-items:center; background:#fff;
+  border:1.5px solid var(--acc,var(--lime)); border-radius:100px; padding:8px 16px;
+  color:var(--acc,var(--lime)); font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+  box-shadow:0 4px 14px -6px rgba(32,47,88,.45); }
+.capsule.alt{ border-color:var(--navy); color:var(--navy); }
 .card .more{ display:inline-flex; align-items:center; gap:8px;
   color:var(--acc); font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase;
   transition:color .2s ease; }
