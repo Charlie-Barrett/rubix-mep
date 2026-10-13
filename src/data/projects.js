@@ -81,7 +81,7 @@ export const projects = [
   },
   {
     slug: 'tyntesfield-cow-barn', accent: PINK, pos: 'center 45%',
-    img: '/assets/tyntesfield-cow-barn.jpg', alt: 'The Cow Barn cafe at National Trust Tyntesfield',
+    img: '/assets/tyntesfield-cow-barn-v2.jpg', alt: 'The Cow Barn cafe at National Trust Tyntesfield',
     capsule: 'National Trust', tag: 'Heritage', title: 'Tyntesfield Cow Barn',
     client: 'National Trust',
     project: 'Refurbishment of the Grade II listed Cow Barn cafe and shop, Wraxall',
