@@ -72,13 +72,21 @@ const team = [
       </div>
       <div class="dirs" id="leadership">
         {directors.map((d, i) => (
-          <article class={'dcard rv' + (i ? ` rv-d${i}` : '')} style={`--acc:${d.accent}`}>
+          <article class={'dcard rv' + (i ? ` rv-d${i}` : '')} style={`--acc:${d.accent}`} data-dcard>
             <div class="ph"><img src={d.img} alt={`${d.name}, Director`} /></div>
             <div class="body">
               <h3>{d.name}</h3>
               <div class="role">Director</div>
+              <button type="button" class="bio-btn" aria-expanded="false" aria-controls={`bio-${i}`}>Read bio <span aria-hidden="true">+</span></button>
+            </div>
+            <!-- Bio and bullets sit over the card: revealed on hover (desktop) or via the
+                 button (touch and keyboard). Text stays in the page for SEO. -->
+            <div class="more" id={`bio-${i}`}>
+              <h3>{d.name}</h3>
+              <div class="role">Director</div>
               <p set:html={d.bio} />
               <ul>{d.points.map((pt) => <li set:html={pt} />)}</ul>
+              <button type="button" class="bio-close" aria-label={`Close ${d.name}'s bio`}>Close <span aria-hidden="true">&times;</span></button>
             </div>
           </article>
         ))}
@@ -119,4 +127,14 @@ const team = [
     messageLabel="Tell us a little about yourself"
     email="careers@rubixmep.com"
   />
+  <script is:inline>
+    /* Director bios: the button opens the overlay (touch / keyboard); hover handles desktop in CSS. */
+    document.querySelectorAll('[data-dcard]').forEach(function (card) {
+      var open = card.querySelector('.bio-btn'), close = card.querySelector('.bio-close');
+      var set = function (on) { card.classList.toggle('open', on); open.setAttribute('aria-expanded', on); if (on) close.focus(); else open.focus(); };
+      open.addEventListener('click', function () { set(true); });
+      close.addEventListener('click', function () { set(false); });
+      card.addEventListener('keydown', function (e) { if (e.key === 'Escape' && card.classList.contains('open')) set(false); });
+    });
+  </script>
 </BaseLayout>
