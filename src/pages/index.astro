@@ -249,7 +249,7 @@ import { projects } from '../data/projects.js';
       {projects.map((p, i) => (
         <a class={'card rv' + (i < 4 && i > 0 ? ` rv-d${i}` : '')} href={`/projects/${p.slug}`} style={`--acc:${p.accent}`}>
           <div class="img">
-            <div class={'fill' + (p.fit === 'contain' ? ' contain' : '')} style={`background-image:url('${p.img}')` + (p.pos ? `;background-position:${p.pos}` : '')}></div>
+            <div class="fill" style={`background-image:url('${p.img}')` + (p.pos ? `;background-position:${p.pos}` : '')}></div>
             <div class="capsules">
               <span class="capsule" set:html={p.capsule} />
               <span class="capsule alt" set:html={p.tag} />

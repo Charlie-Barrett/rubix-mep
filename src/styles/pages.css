@@ -30,15 +30,10 @@
 /* ---------- projects index grid ---------- */
 .pgrid{ display:grid; grid-template-columns:repeat(2,1fr); gap:26px; margin-top:44px; }
 .pcard{ display:block; text-decoration:none; border-radius:16px; overflow:hidden; position:relative;
-  aspect-ratio:16/10; background:var(--navy-2); box-shadow:var(--shadow); }
+  aspect-ratio:4/3; background:var(--navy-2); box-shadow:var(--shadow); }
 .pcard .fill{ position:absolute; inset:0; background-size:cover; background-position:center;
   transition:transform .5s ease; }
 .pcard:hover .fill{ transform:scale(1.04); }
-.pcard .fill.contain{ background-size:0 0; background-color:var(--navy-2); }
-.pcard .fill.contain::before, .pcard .fill.contain::after{ content:""; position:absolute; background-image:inherit;
-  background-repeat:no-repeat; background-position:center; }
-.pcard .fill.contain::before{ inset:-24px; background-size:cover; filter:blur(22px) brightness(.72) saturate(.9); }
-.pcard .fill.contain::after{ inset:0; background-size:contain; }
 .pcard .shade{ position:absolute; inset:0;
   background:linear-gradient(180deg, rgba(32,47,88,.18) 0%, rgba(32,47,88,.05) 40%, rgba(32,47,88,.72) 100%); }
 .pcard .capsules{ position:absolute; top:24px; left:24px; display:flex; flex-wrap:wrap; gap:8px; }

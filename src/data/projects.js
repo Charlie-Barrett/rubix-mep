@@ -3,15 +3,14 @@
 // list, applied to the capsule, the field labels and the "View project" link.
 // Copy comes from the capabilities brochure and the client's review notes; the
 // word "carbon" is wrapped in .c-green per the brand rule.
-// fit: 'contain' (13.10 review) shows the whole image inside the 16:10 frame over a blurred
-// fill of itself, instead of a cover crop that left near-square and portrait images looking
-// zoomed in. pos: overrides the crop anchor for cover images (Chelmsford sits bottom-anchored so
-// the care home, not the trees, fills the frame). Capsule = client name (Lampworks shows Regal ME), not the project name.
+// pos (13.10 review): crop anchor for each cover image, so the building rather than sky or
+// trees fills the tile. Tiles are 4:3 (grid) and 3:2 (carousel) to limit the crop on the
+// near-square CGIs. Capsule = client name (Lampworks shows Regal ME), not the project name.
 const BLUE = 'var(--blue)', PINK = 'var(--magenta)', GREEN = 'var(--lime)';
 
 export const projects = [
   {
-    slug: 'the-lampworks', accent: BLUE, fit: 'contain',
+    slug: 'the-lampworks', accent: BLUE, pos: 'center 55%',
     img: '/assets/lampworks-cgi.png', alt: 'The Lampworks build-to-rent development',
     capsule: 'Regal ME', tag: 'Residential', title: 'The Lampworks',
     client: 'Regal ME / Build Fifty5',
@@ -51,7 +50,7 @@ export const projects = [
     indexTag: '&pound;34m &middot; Later Living'
   },
   {
-    slug: 'curborough-craft-centre', accent: PINK,
+    slug: 'curborough-craft-centre', accent: PINK, pos: 'center 60%',
     img: '/assets/curborough-cgi.jpg', alt: 'CGI of Curborough Craft Centre: timber-clad retail units around a landscaped courtyard',
     capsule: 'McPhillips', tag: 'Mixed-use &amp; Retail', title: 'Curborough Craft Centre',
     client: 'McPhillips',
@@ -61,7 +60,7 @@ export const projects = [
     indexTag: 'Mixed-use &amp; Retail'
   },
   {
-    slug: 'melrose-grange', accent: GREEN, fit: 'contain',
+    slug: 'melrose-grange', accent: GREEN, pos: 'center 40%',
     img: '/assets/melrose-grange-cgi.jpg', alt: 'CGI of Melrose Grange care home, St Mellons, Cardiff',
     capsule: 'Hallmark', tag: 'Later Living &amp; Care', title: 'Melrose Grange, Cardiff',
     client: 'Hallmark Luxury Care Homes',
@@ -81,7 +80,7 @@ export const projects = [
     indexTag: '&pound;2m &middot; Retail &amp; Hospitality'
   },
   {
-    slug: 'tyntesfield-cow-barn', accent: PINK, pos: 'center 40%',
+    slug: 'tyntesfield-cow-barn', accent: PINK, pos: 'center 45%',
     img: '/assets/tyntesfield-cow-barn.jpg', alt: 'The Cow Barn cafe at National Trust Tyntesfield',
     capsule: 'National Trust', tag: 'Heritage', title: 'Tyntesfield Cow Barn',
     client: 'National Trust',
@@ -91,7 +90,7 @@ export const projects = [
     indexTag: '&pound;1m &middot; Heritage'
   },
   {
-    slug: 'corner-house-port-loop', accent: GREEN, fit: 'contain',
+    slug: 'corner-house-port-loop', accent: GREEN, pos: 'center 25%',
     img: '/assets/corner-house-port-loop-cgi.jpg', alt: 'CGI of Corner House 1 at Icknield Port Loop, Birmingham',
     capsule: 'Urban Splash', tag: 'Residential', title: 'Corner House, Port Loop',
     client: 'Urban Splash / Create.iF',
@@ -101,7 +100,7 @@ export const projects = [
     indexTag: '&pound;15m &middot; Residential'
   },
   {
-    slug: 'kings-hill-care-home', accent: BLUE, fit: 'contain',
+    slug: 'kings-hill-care-home', accent: BLUE, pos: 'center 55%',
     img: '/assets/kings-hill-cgi.jpg', alt: 'CGI of the new 78-bed care home at King’s Hill for Lovett Care',
     capsule: 'Lovett Care', tag: 'Later Living &amp; Care', title: 'King&rsquo;s Hill Care Home',
     client: 'Lovett Care',
@@ -111,7 +110,7 @@ export const projects = [
     indexTag: '&pound;11m &middot; Later Living &amp; Care'
   },
   {
-    slug: 'calke-abbey-hub-kitchen', accent: PINK, fit: 'contain',
+    slug: 'calke-abbey-hub-kitchen', accent: PINK, pos: 'center 60%',
     img: '/assets/calke-abbey-hub-kitchen.jpg', alt: 'The new timber-clad Hub Kitchen at Calke Abbey with roof-mounted solar PV',
     capsule: 'National Trust', tag: 'Heritage', title: 'Calke Abbey Hub Kitchen',
     client: 'The National Trust',
@@ -125,7 +124,7 @@ export const projects = [
 // Projects index only: Batsford sits after the eleven featured projects.
 export const indexExtra = [
   {
-    slug: 'batsford-arboretum', accent: GREEN, fit: 'contain',
+    slug: 'batsford-arboretum', accent: GREEN, pos: 'center 12%',
     img: '/assets/batsford-arboretum.jpg', alt: 'Batsford Arboretum visitor building extension',
     capsule: 'Batsford Arboretum', indexTag: '&pound;2m &middot; Heritage'
   }

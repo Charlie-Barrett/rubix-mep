@@ -168,16 +168,10 @@ html.preloading{ overflow:hidden; }
 .projects .slides::-webkit-scrollbar{ display:none; }
 .card, .card *{ -webkit-user-drag:none; user-select:none; -webkit-user-select:none; }
 .card{ flex:0 0 min(1100px, 86vw); scroll-snap-align:start; text-decoration:none; display:block; --acc:var(--blue); }
-.card .img{ position:relative; aspect-ratio:16/10; border-radius:var(--radius); overflow:hidden; }
+.card .img{ position:relative; aspect-ratio:3/2; border-radius:var(--radius); overflow:hidden; }
 .card .img .fill{ position:absolute; inset:0; background-position:center; background-size:cover;
   transition:transform .5s ease; }
 .card:hover .img .fill{ transform:scale(1.045); }
-/* 13.10 review: whole image visible, blurred self-fill behind (no cover crop) */
-.fill.contain{ background-size:0 0; background-color:var(--navy-2); }
-.fill.contain::before, .fill.contain::after{ content:""; position:absolute; background-image:inherit;
-  background-repeat:no-repeat; background-position:center; }
-.fill.contain::before{ inset:-24px; background-size:cover; filter:blur(22px) brightness(.72) saturate(.9); }
-.fill.contain::after{ inset:0; background-size:contain; }
 .card .img::after{ content:""; position:absolute; inset:0;
   background:linear-gradient(to top, rgba(32,47,88,.55) 0%, rgba(32,47,88,0) 42%); transition:opacity .3s ease; }
 .card:hover .img::after, .card:focus-visible .img::after{ opacity:0; }
