@@ -130,6 +130,11 @@
 .bro-why li b{ color:#fff; }
 .bro-why li::before{ content:""; position:absolute; left:0; top:8px; width:9px; height:9px;
   border-radius:2px; background:var(--lime); }
+/* brochure gate form (uses the shared .enq styles, which are built for navy) */
+.bro-gate{ max-width:none; margin:28px 0 0; }
+.bro-gate .done{ text-align:left; padding:10px 0 0; }
+.bro-gate .done p{ color:#C9D2E4; }
+.bro-gate .done a{ color:#fff; }
 .bro-note{ margin-top:16px; font-size:12.5px; color:var(--grey-2); max-width:420px; }
 .bro-cover{ position:relative; display:block; aspect-ratio:1/1.24; text-decoration:none; }
 .bro-cover span{ position:absolute; inset:0; border-radius:6px; }

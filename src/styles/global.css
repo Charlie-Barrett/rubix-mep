@@ -176,6 +176,21 @@ a{ color:inherit; }
 .cta.light .enq textarea:focus{ border-color:var(--navy); }
 .cta.light .enq .fine{ color:var(--grey); }
 .cta.light .enq .fine a{ color:var(--navy); }
+/* HubSpot wiring: honeypot, select, opt-in, sending and error states */
+.enq .hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.enq select{ width:100%; font:inherit; font-size:15px; color:#fff; background:transparent;
+  border:1.5px solid rgba(255,255,255,.35); border-radius:6px; padding:14px 16px; outline:0; appearance:auto; }
+.enq select:focus{ border-color:#fff; background:rgba(255,255,255,.06); }
+.enq select option{ color:var(--navy); }
+.enq label.optin{ display:flex; gap:12px; align-items:flex-start; margin-top:20px; font-size:13.5px; font-weight:400;
+  letter-spacing:0; text-transform:none; color:#C9D2E4; line-height:1.55; cursor:pointer; }
+.enq label.optin input{ width:18px; height:18px; flex:none; margin-top:1px; padding:0; accent-color:var(--lime); }
+.enq button[disabled]{ opacity:.6; cursor:wait; transform:none; }
+.enq .err{ margin:16px 0 0; font-size:14px; color:#FFB3D9; }
+.enq .err a{ color:#fff; }
+.cta.light .enq .err{ color:var(--magenta); }
+.cta.light .enq .err a{ color:var(--navy); }
+.cta .enq .done p{ margin-bottom:0; }
 @media (max-width:640px){ .enq .fields{ grid-template-columns:1fr; } }
 @media (max-width:1024px){
   .dgrid{ grid-template-columns:1fr; }

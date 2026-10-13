@@ -152,8 +152,9 @@ import '../styles/pages.css';
   </section>
 
   <!-- THE BROCHURE: what it is and why you would want it.
-       The download is open for now. When HubSpot is live this is the gate:
-       swap the button for the HubSpot form and release the PDF on submit. -->
+       Gated: the form posts to HubSpot ("Website: Brochure download") via
+       public/js/site.js, then the PDF downloads and a fallback link shows.
+       Soft gate only: the PDF URL itself is public. -->
   <section class="sec-pad" id="brochure">
     <div class="wrap">
       <div class="brochure rv">
@@ -166,10 +167,40 @@ import '../styles/pages.css';
             <li><b>Building a business case.</b> Worked <span class="c-green">carbon</span> and energy outcomes on real schemes, with values and stages.</li>
             <li><b>Sharing internally.</b> A single PDF for colleagues who were not in the room.</li>
           </ul>
-          <a href="/Rubix-Capabilities-Brochure.pdf" class="btn btn-lime" download>Download the brochure (PDF) <span class="arr">&darr;</span></a>
-          <p class="bro-note">No form for now. Once our CRM is live this will ask for your name and email so we know who to follow up with.</p>
+          <div class="enq bro-gate" data-enquiry id="brochure-form">
+            <form method="post" action="#" novalidate>
+              <input type="hidden" name="enquiry_type" value="brochure" />
+              <div class="hp" aria-hidden="true"><label for="bro-website">Website</label><input id="bro-website" name="website_url" type="text" tabindex="-1" autocomplete="off" /></div>
+              <div class="fields">
+                <div><label for="bro-first">First name</label><input id="bro-first" name="firstname" type="text" autocomplete="given-name" required /></div>
+                <div><label for="bro-last">Last name</label><input id="bro-last" name="lastname" type="text" autocomplete="family-name" required /></div>
+                <div><label for="bro-email">Work email</label><input id="bro-email" name="email" type="email" autocomplete="email" required /></div>
+                <div><label for="bro-company">Company</label><input id="bro-company" name="company" type="text" autocomplete="organization" required /></div>
+                <div class="full"><label for="bro-type">Which best describes you? (optional)</label>
+                  <select id="bro-type" name="client_type">
+                    <option value="">Select</option>
+                    <option value="architect">Architect</option>
+                    <option value="developer_client">Developer or client</option>
+                    <option value="contractor">Contractor</option>
+                    <option value="consultant">Other consultant</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <label class="optin"><input type="checkbox" name="marketing_optin" value="yes" /><span>Send me occasional updates on Rubix MEP projects and insights. You can unsubscribe at any time.</span></label>
+              <div class="row">
+                <p class="fine">We use your details to send the brochure and follow up on it. See our <a href="/privacy">privacy notice</a>.</p>
+                <button type="submit" class="btn btn-lime">Get the brochure (PDF) <span class="arr">&darr;</span></button>
+              </div>
+              <p class="err" role="alert" hidden>Sorry, that didn&rsquo;t go through. Please try again, or email <a href="mailto:info@rubixmep.com">info@rubixmep.com</a> and we will send it over.</p>
+            </form>
+            <div class="done" role="status">
+              <h3>Thank you</h3>
+              <p>Your download should start automatically. If it doesn&rsquo;t, <a href="/Rubix-Capabilities-Brochure.pdf" download data-download>download the brochure here</a>.</p>
+            </div>
+          </div>
         </div>
-        <a class="bro-cover" href="/Rubix-Capabilities-Brochure.pdf" download aria-label="Download the Rubix MEP capabilities brochure">
+        <a class="bro-cover" href="#brochure-form" aria-label="Get the Rubix MEP capabilities brochure">
           <span class="sheet-1" aria-hidden="true"></span>
           <span class="sheet-2" aria-hidden="true"></span>
           <span class="sheet-3" aria-hidden="true">
