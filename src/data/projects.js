@@ -10,8 +10,8 @@ const BLUE = 'var(--blue)', PINK = 'var(--magenta)', GREEN = 'var(--lime)';
 
 export const projects = [
   {
-    slug: 'the-lampworks', accent: BLUE, pos: 'center 55%',
-    img: '/assets/lampworks-cgi.png', alt: 'The Lampworks build-to-rent development',
+    slug: 'the-lampworks', accent: BLUE, pos: 'center 60%',
+    img: '/assets/lampworks-frontage-cgi.jpg', alt: 'The Lampworks build-to-rent development',
     capsule: 'Regal ME', tag: 'Residential', title: 'The Lampworks',
     client: 'Regal ME / Build Fifty5',
     project: '148 build-to-rent apartments across five blocks',
@@ -90,8 +90,8 @@ export const projects = [
     indexTag: '&pound;1m &middot; Heritage'
   },
   {
-    slug: 'corner-house-port-loop', accent: GREEN, pos: 'center 25%',
-    img: '/assets/corner-house-port-loop-cgi.jpg', alt: 'CGI of Corner House 1 at Icknield Port Loop, Birmingham',
+    slug: 'corner-house-port-loop', accent: GREEN, pos: 'center 30%',
+    img: '/assets/corner-house-port-loop-cgi-v2.jpg', alt: 'CGI of Corner House 1 at Icknield Port Loop, Birmingham',
     capsule: 'Urban Splash', tag: 'Residential', title: 'Corner House, Port Loop',
     client: 'Urban Splash / Create.iF',
     project: '22 new apartments over five storeys at Icknield Port Loop, Birmingham',
@@ -110,8 +110,8 @@ export const projects = [
     indexTag: '&pound;11m &middot; Later Living &amp; Care'
   },
   {
-    slug: 'calke-abbey-hub-kitchen', accent: PINK, pos: 'center 60%',
-    img: '/assets/calke-abbey-hub-kitchen-v2.jpg', alt: 'The new timber-clad Hub Kitchen at Calke Abbey with roof-mounted solar PV',
+    slug: 'calke-abbey-hub-kitchen', accent: PINK, pos: 'center 65%',
+    img: '/assets/calke-abbey-hub-kitchen-elevation.jpg', alt: 'The new timber-clad Hub Kitchen at Calke Abbey with roof-mounted solar PV',
     capsule: 'National Trust', tag: 'Heritage', title: 'Calke Abbey Hub Kitchen',
     client: 'The National Trust',
     project: 'New-build Hub Kitchen, BBQ kiosk and refurbishment works at Calke Abbey, Derbyshire',

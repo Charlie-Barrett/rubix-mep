@@ -50,7 +50,20 @@ Forms: interim only. `public/js/site.js` shows the thank-you state client-side a
 
 Applied: project tiles are less wide (projects grid 4:3, homepage carousel 3:2, were 16:10) so the near-square CGIs lose far less to the crop, and every image has a `pos` crop anchor in `src/data/projects.js` so the building, not sky or trees, fills the tile (Chelmsford bottom, Batsford top for the wavy roof, Corner House top so the roofline is not cut). Images always cover the tile; a letterbox/blurred-fill version was tried and rejected by Charlie. Capsules on the homepage carousel and the projects grid are now white with the accent-colour outline and text (pink was unreadable on navy); the sector capsule is white with navy. Lampworks capsule reads "Regal ME" (capsule = client, not project). Homepage carousel wraps at both ends. "Low-carbon" is now green as a whole phrase (`<span class="c-green">low-carbon</span>`), extending the carbon-green rule: carbon is bad, low carbon is good.
 
-Curborough now uses the two full-width architect CGIs (courtyard = card image, Farmers Table street = second image) and Tyntesfield uses Charlie's own 4:3 exterior photo (converted from HEIC, 2000px); both back to a normal crop. Still waiting on from Rubix: the two carbon impact study visuals for Services, Adam's colour headshot (SharePoint staff photos, "AB"), Sarah's photo, HubSpot form embed codes. Team page tweaks (Stuart up, Dave down, Winnie zoom, names-on-image hover) not yet done. Calke Abbey source image is itself a close crop of the roof; a wider shot is needed to show the building.
+Curborough now uses the two full-width architect CGIs (courtyard = card image, Farmers Table street = second image) and Tyntesfield uses Charlie's own 4:3 exterior photo (converted from HEIC, 2000px); both back to a normal crop. Still waiting on from Rubix: the two carbon impact study visuals for Services, Adam's colour headshot (SharePoint staff photos, "AB"), Sarah's photo, HubSpot form embed codes. Team page tweaks (Stuart up, Dave down, Winnie zoom, names-on-image hover) not yet done. Calke Abbey source image was a close crop of the roof; replaced 14.10 with the full elevation photo.
+
+## 14 Oct 2026: project imagery from Rubix
+
+New images dropped into `public/assets/` (web-sized, max 2000px, JPEG q82) and wired in. Naming is `<project-slug>-<subject>.jpg`; a `-v2` suffix means it replaces an earlier file of the same shot.
+
+- Calke Abbey: `calke-abbey-hub-kitchen-elevation.jpg` (full 4:3 PV elevation) is now the card, hero and crop anchor `center 65%`, answering the 13.10 note that the old source was a close crop of the roof. Gallery: `calke-abbey-hub-kitchen-gable.jpg` and `calke-abbey-bbq-kiosk.jpg`. The old `calke-abbey-hub-kitchen.jpg` / `-v2.jpg` are no longer referenced.
+- The Lampworks: `lampworks-frontage-cgi.jpg` (16:9, 2000px) replaces the 885px `lampworks-cgi.png` crop for card, hero and first gallery image; crop anchor `center 60%`. `lampworks-cgi.png` no longer referenced. The supplied street-view file is the same as the existing `lampworks-street.jpg` and was not replaced.
+- Corner House: `corner-house-port-loop-cgi-v2.jpg` (full 16:9 canal view) replaces the 831px crop for card, hero and gallery; anchor `center 30%`. Second gallery image `corner-house-port-loop-detail-cgi.jpg`.
+- Melrose Grange (TO CONFIRM with Rubix: the two CGIs carry no signage and were placed on a best reading): gallery now `melrose-grange-courtyard-cgi.jpg` and `melrose-grange-bistro-cgi.jpg`; card and hero unchanged.
+- Tyntesfield (TO CONFIRM with Rubix: the kitchen photos were placed here because the stone-and-brick walls match the Cow Barn and the copy mentions the bakery; they could be the Calke Abbey Finishing Kitchen refurbishment instead): gallery now `tyntesfield-cow-barn-kitchen.jpg` plus the existing shop photo. `tyntesfield-cow-barn-kitchen-2.jpg` is saved but unused.
+- Curborough: the two supplied CGIs are identical in size to the files already in use and were not replaced.
+
+`npm run build` could not be run from the Claude session (the shell cannot delete Vite cache files), so `dist/` is stale; run it locally or let Vercel build from source.
 
 ## Known gaps / decisions to revisit
 
