@@ -42,6 +42,7 @@ const ogImage = new URL(image, Astro.site).href;
         wait_for_update: 500
       });
       gtag('set', 'ads_data_redaction', true);
+      gtag('set', 'url_passthrough', false);
     </script>
     <!-- Cookiebot consent banner: first external script so auto-blocking can hold back cookies until consent. -->
     <script is:inline id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d376d24e-91fd-4bff-a1c4-00867f89529e" data-blockingmode="auto" type="text/javascript"></script>
