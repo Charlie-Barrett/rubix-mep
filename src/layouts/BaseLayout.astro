@@ -31,6 +31,8 @@ const ogImage = new URL(image, Astro.site).href;
 <html lang="en-GB">
   <head>
     <meta charset="utf-8" />
+    <!-- Cookiebot consent banner: must be the first script on the page so auto-blocking can hold back cookies until consent. -->
+    <script is:inline id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="d376d24e-91fd-4bff-a1c4-00867f89529e" data-blockingmode="auto" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
