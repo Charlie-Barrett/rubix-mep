@@ -103,6 +103,17 @@
     });
   };
 
+  /* GA4 conversion events, sent only if the visitor accepted statistics cookies.
+     Project enquiries and brochure downloads are leads; careers is tracked separately. */
+  var GA_EVENTS = { project: 'generate_lead', brochure: 'generate_lead', careers: 'careers_interest' };
+  var track = function (kind) {
+    try {
+      if (!window.gtag || !GA_EVENTS[kind]) return;
+      if (!(window.Cookiebot && Cookiebot.consent && Cookiebot.consent.statistics)) return;
+      gtag('event', GA_EVENTS[kind], { form_type: kind, page_path: location.pathname });
+    } catch (e) {}
+  };
+
   document.querySelectorAll('[data-enquiry] form').forEach(function (form) {
     var box = form.closest('[data-enquiry]');
     var btn = form.querySelector('button[type="submit"]');
@@ -119,6 +130,7 @@
       if (btn) btn.disabled = true;
       hsSend(kind, hsPayload(form, kind)).then(function () {
         box.classList.add('sent');
+        track(kind);
         if (kind === 'brochure') {
           var dl = box.querySelector('[data-download]');
           if (dl) dl.click();
