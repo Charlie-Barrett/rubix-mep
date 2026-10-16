@@ -1,0 +1,11 @@
+{
+  "redirects": [
+    { "source": "/home", "destination": "/", "statusCode": 301 },
+    { "source": "/contact-us", "destination": "/contact", "statusCode": 301 },
+    { "source": "/new-page", "destination": "/projects", "statusCode": 301 },
+    { "source": "/general-3", "destination": "/", "statusCode": 301 },
+    { "source": "/cart", "destination": "/", "statusCode": 301 },
+    { "source": "/sectors", "destination": "/projects", "statusCode": 301 },
+    { "source": "/services/carbon-impact-studies", "destination": "/services", "statusCode": 301 }
+  ]
+}
