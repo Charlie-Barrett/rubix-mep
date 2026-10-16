@@ -98,6 +98,15 @@
   box-shadow:var(--shadow); }
 .chart-card img{ width:100%; border-radius:8px; }
 .chart-card .cap{ font-size:13px; color:var(--grey); margin-top:12px; line-height:1.6; }
+.study-visuals{ padding-top:0; }
+.study-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:40px; align-items:start; }
+@media (max-width:960px){ .study-grid{ grid-template-columns:1fr; } }
+.study-fig{ margin:0; }
+.study-grid-full{ grid-template-columns:1fr; max-width:1100px; }
+.study-fig img{ display:block; height:auto; }
+.study-fig a{ display:block; cursor:zoom-in; }
+.study-label{ display:inline-block; margin-bottom:14px; padding:5px 12px; border:1.5px solid var(--lime);
+  border-radius:999px; color:var(--navy); font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
 
 .steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:44px; }
 .step{ background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px 22px; box-shadow:var(--shadow); }
