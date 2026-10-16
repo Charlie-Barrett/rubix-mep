@@ -9,7 +9,6 @@ Astro static site, built from the approved Aug 2026 draft pages and the V6 capab
 | `/` | Homepage V3 (client redraft, SBK reference) |
 | `/about` | About Us V2 |
 | `/services` | Services V2 (discipline blocks now anchored sections) |
-| `/services/carbon-impact-studies` | New, from brochure p.8 + Coleton Fishacre study |
 | `/capabilities` | New digital brochure page + PDF download |
 | `/projects` | New index of the 5 case studies |
 | `/projects/the-lampworks` | Project V1 draft |
